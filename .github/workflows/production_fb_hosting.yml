@@ -1,0 +1,43 @@
+name: Deploy Production App to Firebase Hosting 
+
+on:
+  pull_request:
+    branches: 
+      - 'production'
+  push:
+    branches:
+      - 'production'
+
+jobs:
+  fe-build-and-deploy:
+    name: Build and Deploy to Firebase
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+
+      - name: Initialize Node and Cache Dependencies
+        uses: actions/setup-node@master
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Production App
+        run: npm run build
+          
+        # Deploy app to Firebase
+      - name: Deploy app to firebase (prod-cs-careers-vt-website)
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_PROD_SA_KEY }}
+          PROJECT_ID: "prod-cs-careers-vt-website"
+          PROJECT_PATH: "./"
+
+      - run: echo "Deployment Successful!"
