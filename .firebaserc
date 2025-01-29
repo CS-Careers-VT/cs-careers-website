@@ -1,0 +1,10 @@
+{
+    "projects": {
+      "default": "dev-cs-careers-vt-website",
+      "dev": "dev-cs-careers-vt-website",
+      "DEV": "dev-cs-careers-vt-website",
+      "prod": "prod-cs-careers-vt-website",
+      "PROD": "prod-cs-careers-vt-website"
+    }
+  }
+  
