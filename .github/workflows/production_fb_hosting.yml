@@ -10,7 +10,7 @@ on:
 
 jobs:
   fe-build-and-deploy:
-    name: Build and Deploy to Firebase
+    name: Build and Deploy to Production Firebase
     runs-on: ubuntu-latest
 
     steps:
