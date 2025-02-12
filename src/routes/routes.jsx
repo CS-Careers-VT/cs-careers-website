@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import AboutUs from "../pages/AboutUs/AboutUs";
-import NewsEvents from "../pages/NewsEvents/NewsEvents";
-import Sponsorships from "../pages/Sponsorships/Sponsorships";
-import PhotoGallery from "../pages/PhotoGallery/PhotoGallery";
+import Home from "../pages/Home";
+import AboutUs from "../pages/AboutUs";
+import NewsEvents from "../pages/NewsEvents";
+import Sponsorships from "../pages/Sponsorships";
+import PhotoGallery from "../pages/PhotoGallery";
 
 const AppRoutes = () => {
   return (
