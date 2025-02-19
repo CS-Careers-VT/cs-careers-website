@@ -9,13 +9,15 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path='/news-events' element={<NewsEvents />} />
-          <Route path='/photo-gallery' element={<PhotoGallery />} />
-          <Route path='/sponsorships' element={<Sponsorships />} />
-        </Routes>
+        <div className='pt-28 bg-csc-maroon-bg min-h-screen'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path='/news-events' element={<NewsEvents />} />
+            <Route path='/photo-gallery' element={<PhotoGallery />} />
+            <Route path='/sponsorships' element={<Sponsorships />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </>

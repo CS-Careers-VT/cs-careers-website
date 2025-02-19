@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-7xl font-bold text-white;
+  }
+
+  h2 {
+    @apply text-5xl font-bold leading-10;
+  }
+
+  p {
+    @apply text-2xl font-light leading-10 text-[#fdf6f6];
+  }
+}
+
+@layer components {
+  /* Add styling classes for buttons, etc. */
+}
