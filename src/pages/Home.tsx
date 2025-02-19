@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import mainLogo from "@assets/main_logo.svg"
+import GobblerPhoto from "@assets/gobbler_main.jpeg"
 import MainLogo from "../assets/main_logo.svg"
 import InstaIcon from "../assets/instagram_icon.svg"
 import LinkIcon from "../assets/linkedin_icon.svg"
@@ -12,7 +12,6 @@ import EmailInput from "../components/EmailInput"
 function Home() {
     return (
         <div className="min-h-screen flex flex-col">
-            <Navbar />
             {/* Hero Section */}
             <main className="flex-grow bg-[#861f41] p-6 flex items-center justify-center min-h-screen">
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -96,7 +95,6 @@ function Home() {
                 </div>
             </div>
 
-            <Footer />
         </div>
 
     )
