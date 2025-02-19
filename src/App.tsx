@@ -1,15 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AboutUs from './pages/AboutUs';
-import Home from './pages/Home';
-import NewsEvents from './pages/NewsEvents';
-import PhotoGallery from './pages/PhotoGallery';
-import Sponsorships from './pages/Sponsorships';
+import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
