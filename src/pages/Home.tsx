@@ -1,6 +1,10 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import mainLogo from "../assets/main_logo.svg"
+import MainLogo from "../assets/main_logo.svg"
+import InstaIcon from "../assets/instagram_logo.svg"
+import LinkIcon from "../assets/linkedin_logo.svg"
+import FacebookIcon from "../assets/facebook_logo.svg"
+import DiscordIcon from "../assets/discord_logo.svg"
 import GobblerPhoto from "../assets/gobbler_main.jpeg"
 
 
@@ -9,7 +13,7 @@ function Home() {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             {/* Hero Section */}
-            <main className="flex-grow bg-[#861f41] p-6 flex items-center justify-center">
+            <main className="flex-grow bg-[#861f41] p-6 flex items-center justify-center min-h-screen">
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                     <div className="text-left max-w-lg space-y-11">
                         <h1 className="text-white text-7xl font-bold font-['Outfit']">
@@ -30,7 +34,7 @@ function Home() {
                     </div>
                     <div className="flex-shrink-0 mt-8 md:mt-0">
                         <img
-                            src={mainLogo}
+                            src={MainLogo}
                             alt="CS Careers @ VT Logo"
                             className="h-[415px] w-[485px] object-contain"
                         />
@@ -41,8 +45,7 @@ function Home() {
             {/* Hero Section 2 */}
             <div className="w-full min-h-[890px] flex items-center bg-[#d6995d] p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
-                    {/* Left Content (Mission Statement) */}
-                    <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[60%]">
+                    <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[80%]">
                         <h2 className="text-[50px] font-bold font-['Outfit'] leading-[55px]">
                             Our Mission
                         </h2>
@@ -52,15 +55,18 @@ function Home() {
                         </p>
                     </div>
 
-                    {/* Right Image (Aligned Lower Right) */}
                     <div className="self-end">
                         <img
                             src={GobblerPhoto}
                             alt="Gobblerfest Photo"
-                            className="w-[750px] h-[400px] rounded-[50px] object-cover"
+                            className="w-[843px] h-[340px] rounded-[50px] object-cover"
                         />
                     </div>
                 </div>
+            </div>
+
+            <div>
+                
             </div>
             <Footer />
         </div>

@@ -3,7 +3,7 @@ import mainLogo from "../assets/main_logo.svg"
 
 function Navbar () {
   return (
-    <nav className="w-full bg-[#861f41] py-6 fixed top-0 left-0 z-50">
+    <nav className="w-full bg-[#861f41] py-6">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between px-8">
         {/* Logo */}
         <div className="flex-shrink-0">
