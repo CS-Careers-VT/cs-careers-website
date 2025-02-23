@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import MainLogo from "../assets/main_logo.svg"
-import InstaIcon from "../assets/instagram_logo.svg"
-import LinkIcon from "../assets/linkedin_logo.svg"
-import FacebookIcon from "../assets/facebook_logo.svg"
-import DiscordIcon from "../assets/discord_logo.svg"
+import InstaIcon from "../assets/instagram_icon.svg"
+import LinkIcon from "../assets/linkedin_icon.svg"
+import FacebookIcon from "../assets/facebook_icon.svg"
+import DiscordIcon from "../assets/discord_icon.svg"
 import GobblerPhoto from "../assets/gobbler_main.jpeg"
+import EmailInput from "../components/EmailInput"
 
 
 function Home() {
@@ -42,7 +43,7 @@ function Home() {
                 </div>
             </main>
 
-            {/* Hero Section 2 */}
+            {/* Mission Section */}
             <div className="w-full min-h-[890px] flex items-center bg-[#d6995d] p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
                     <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[80%]">
@@ -64,10 +65,37 @@ function Home() {
                     </div>
                 </div>
             </div>
+            {/* Follow Us Section */}
+            <div className="w-full flex flex-col items-center bg-[#861f41] py-16 pb-40">
+                <div className="w-full text-center mb-40">
+                    <h2 className="text-white text-[70px] font-bold font-['Outfit'] leading-[77px]">
+                        Follow Us
+                    </h2>
+                    <div className="w-[309.26px] h-[11px] bg-[#d6995d] mx-auto mt-2"></div>
+                </div>
+                <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">
+                        <img src={InstaIcon} alt="Instagram" className="w-[154px] h-[148px] m-4" />
+                        <img src={LinkIcon} alt="LinkedIn" className="w-[149px] h-[149px] m-4" />
+                        <img src={FacebookIcon} alt="Facebook" className="w-[143px] h-[143px] m-4" />
+                        <img src={DiscordIcon} alt="Discord" className="w-[160px] h-[161px] m-4" />
+                    </div>
 
-            <div>
-                
+                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 flex flex-col w-[550px] h-[370px] space-y-6">
+                        <h2 className="text-[40px] font-bold font-['Outfit'] leading-[44px]">
+                            CS Careers Newsletter
+                        </h2>
+                        <p className="text-[26px] font-normal font-['Outfit'] leading-7">
+                            Stay updated on events and opportunities!
+                        </p>
+                        <EmailInput />
+                        <button className="bg-[#861f41] rounded-[50px] w-64 h-[62.38px] text-white text-[23px] font-semibold font-['Inter']">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
             </div>
+
             <Footer />
         </div>
 

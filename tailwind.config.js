@@ -15,7 +15,7 @@ export default {
         'csc-maroon': {
           default: '#800020'
         },
-        'csc-organge': {
+        'csc-orange': {
           default: '#D6995D'
         },
         'csc-yellow': {
