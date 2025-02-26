@@ -46,13 +46,13 @@ function Home() {
             {/* Mission Section */}
             <div className="w-full min-h-[890px] flex items-center bg-[#d6995d] p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
-                    <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[80%]">
-                        <h2 className="text-[50px] font-bold font-['Outfit'] leading-[55px]">
+                    <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-10 w-[60%] h-[420px]">
+                        <h2 className="text-[55px] font-bold font-['Outfit'] leading-[55px]">
                             Our Mission
                         </h2>
-                        <p className="text-[25px] font-light font-['Outfit'] leading-[50px] text-[#fdf6f6]">
+                        <p className="text-[30px] font-light font-['Outfit'] leading-[60px] text-[#fdf6f6]">
                             To foster a robust educational space where students interested
-                            in CS can flourish on their journey to the job market.
+                            in computer science can flourish on their journey to the job market.
                         </p>
                     </div>
 
@@ -60,7 +60,7 @@ function Home() {
                         <img
                             src={GobblerPhoto}
                             alt="Gobblerfest Photo"
-                            className="w-[843px] h-[340px] rounded-[50px] object-cover"
+                            className="w-[843px] h-[420px] rounded-[50px] object-cover"
                         />
                     </div>
                 </div>
@@ -81,7 +81,7 @@ function Home() {
                         <img src={DiscordIcon} alt="Discord" className="w-[160px] h-[161px] m-4" />
                     </div>
 
-                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 flex flex-col w-[550px] h-[370px] space-y-6">
+                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 flex flex-col justify-center items-center w-[550px] h-[370px] space-y-6">
                         <h2 className="text-[40px] font-bold font-['Outfit'] leading-[44px]">
                             CS Careers Newsletter
                         </h2>
@@ -89,7 +89,7 @@ function Home() {
                             Stay updated on events and opportunities!
                         </p>
                         <EmailInput />
-                        <button className="bg-[#861f41] rounded-[50px] w-64 h-[62.38px] text-white text-[23px] font-semibold font-['Inter']">
+                        <button className="bg-[#861f41] rounded-[50px] w-64 h-[62.38px] text-white text-[23px] font-semibold font-['Helvetica']">
                             Subscribe
                         </button>
                     </div>

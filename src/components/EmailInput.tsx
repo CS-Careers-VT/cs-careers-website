@@ -7,7 +7,7 @@ function EmailInput() {
         <input 
           type="email"
           placeholder="Enter your email"
-          className="absolute inset-0 w-full h-full text-center text-white opacity-60 bg-transparent text-[23px] font-semibold font-['Inter'] outline-none"
+          className="absolute inset-0 w-full h-full text-center text-white placeholder-white opacity-50 bg-transparent text-[23px] font-semibold font-['Helvetica'] outline-none"
         />
       </div>
     );
