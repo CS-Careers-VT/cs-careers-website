@@ -38,7 +38,7 @@ Listed below are the many resources that power the CS Careers landing site. Cont
 | NodeJS | v20.15.1 (lts/iron) |
 | NPM | v10.8.2 |
 
-You can check your current version with the following commands. If the wrong version is installed, I highly reccomend using [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm?tab=readme-ov-file) to manage the different versions.
+You can check your current version with the following commands. If the wrong version is installed, I highly recommend using [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm?tab=readme-ov-file) to manage the different versions.
 
 ```bash
 node --version
@@ -49,7 +49,7 @@ npm --version
 
 ```bash
 npm install # Only needed on first run or when package.json is changed
-npm run start
+npm run dev
 ```
 
 ### Styling

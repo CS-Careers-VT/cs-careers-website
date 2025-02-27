@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AboutUs from './pages/AboutUs';
+import Home from './pages/Home';
+import NewsEvents from './pages/NewsEvents';
+import PhotoGallery from './pages/PhotoGallery';
+import Sponsorships from './pages/Sponsorships';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1 className='text-orange-300'>CS Careers</h1>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path='/news-events' element={<NewsEvents />} />
+          <Route path='/photo-gallery' element={<PhotoGallery />} />
+          <Route path='/sponsorships' element={<Sponsorships />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

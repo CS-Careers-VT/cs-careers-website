@@ -1,18 +1,14 @@
-name: Deploy Production App to Firebase Hosting 
+name: Deploy Prod to Firebase Hosting 
 
 on:
-  pull_request:
-    branches: 
-      - 'production'
   push:
     branches:
       - 'production'
 
 jobs:
-  fe-build-and-deploy:
-    name: Build and Deploy to Firebase
+  build-only:
+    name: Prod - PR Build Verification
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
@@ -29,9 +25,29 @@ jobs:
 
       - name: Build Production App
         run: npm run build
-          
-        # Deploy app to Firebase
-      - name: Deploy app to firebase (prod-cs-careers-vt-website)
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prod-built-app
+          path: dist/
+
+
+  deploy:
+    name: Prod - Deploy to Firebase
+    runs-on: ubuntu-latest
+    needs: build-only  # Ensures build verification completes first
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: prod-built-app
+          path: dist/
+
+      - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
