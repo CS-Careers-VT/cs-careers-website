@@ -1,9 +1,6 @@
 name: CI/CD Pipeline for Production 
 
 on:
-  pull_request:
-    branches:
-      - 'production'
   push:
     branches:
       - 'production'
@@ -30,7 +27,11 @@ jobs:
       - name: Build Production App
         run: npm run build
 
-      - run: echo "PR Build Verification Successful!"
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-app
+          path: prod-build/
 
 
   deploy:
@@ -42,20 +43,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
 
-      - name: Initialize Node and Cache Dependencies
-        uses: actions/setup-node@master
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
         with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
+          name: built-app
+          path: prod-build/
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Production App
-        run: npm run build
-
-      - name: Deploy app to firebase (prod-cs-careers-vt-website)
+      - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
