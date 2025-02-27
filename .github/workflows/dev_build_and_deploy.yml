@@ -1,4 +1,4 @@
-name: Deploy Development App to Firebase Hosting 
+name: Deploy Dev to Firebase Hosting 
 
 on:
   push:
