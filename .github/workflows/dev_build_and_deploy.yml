@@ -29,8 +29,8 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: built-app
-          path: dev-build/
+          name: dev-built-app
+          path: dist/
   
   deploy:
     name: Deploy to Firebase
@@ -43,8 +43,8 @@ jobs:
       - name: Download Build Artifact
         uses: actions/download-artifact@v4
         with:
-          name: built-app
-          path: dev-build/
+          name: dev-built-app
+          path: dist/
 
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@master
