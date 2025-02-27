@@ -1,11 +1,9 @@
-import mainLogo from "@assets/main_logo.svg"
 import GobblerPhoto from "@assets/gobbler_main.jpeg"
 import MainLogo from "../assets/main_logo.svg"
 import InstaIcon from "../assets/instagram_icon.svg"
 import LinkIcon from "../assets/linkedin_icon.svg"
 import FacebookIcon from "../assets/facebook_icon.svg"
 import DiscordIcon from "../assets/discord_icon.svg"
-import GobblerPhoto from "../assets/gobbler_main.jpeg"
 import EmailInput from "../components/EmailInput"
 
 
@@ -95,7 +93,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-
         </div>
 
     )
