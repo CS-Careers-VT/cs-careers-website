@@ -8,7 +8,11 @@
   }
 
   h2 {
-    @apply text-5xl font-bold leading-10;
+    @apply text-5xl font-bold leading-10 text-white;
+  }
+
+  h3 {
+    @apply text-4xl font-bold leading-8 text-white;
   }
 
   p {
@@ -17,5 +21,19 @@
 }
 
 @layer components {
-  /* Add styling classes for buttons, etc. */
+  .orange-btn-primary {
+    @apply bg-csc-organge-bg text-[#faefef] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
+  }
+
+  .orange-btn-secondary {
+    @apply border-4 border-csc-organge-bg text-[#fdfbfb] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
+  }
+
+  .maroon-btn-primary {
+    @apply bg-csc-maroon-bg text-[#faefef] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
+  }
+
+  .maroon-btn-secondary {
+    @apply border-4 border-csc-maroon-bg text-[#fdfbfb] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full; 
+  }
 }
