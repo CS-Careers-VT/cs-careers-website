@@ -1,15 +1,12 @@
 function EmailInput() {
     return (
-      <div className="relative w-[331px] h-[63px]">
-        <svg width="331" height="63" viewBox="0 0 331 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1.5" y="1.5" width="327.855" height="59.134" rx="29.567" stroke="#861F41" strokeWidth="3"/>
-        </svg>
         <input 
           type="email"
           placeholder="Enter your email"
-          className="absolute inset-0 w-full h-full text-center text-white placeholder-white opacity-50 bg-transparent text-[23px] font-semibold font-['Helvetica'] outline-none"
+          className="border-csc-maroon-bg border-2 tracking-wide py-4 px-8 text-2xl rounded-full w-full text-center text-white placeholder-white bg-transparent
+                      focus:border-csc-maroon-bg focus:outline-none focus:ring-2 focus:ring-csc-maroon-bg focus:ring-opacity-50 focus:bg-csc-maroon-bg focus:bg-opacity-10 
+                      transition-all duration-300 ease-in-out"
         />
-      </div>
     );
   };
   

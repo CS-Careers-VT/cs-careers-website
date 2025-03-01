@@ -1,34 +1,32 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import MainLogo from "../assets/main_logo.svg"
-import InstaIcon from "../assets/instagram_icon.svg"
-import LinkIcon from "../assets/linkedin_icon.svg"
-import FacebookIcon from "../assets/facebook_icon.svg"
-import DiscordIcon from "../assets/discord_icon.svg"
-import GobblerPhoto from "../assets/gobbler_main.jpeg"
-import EmailInput from "../components/EmailInput"
+import MainLogo from "@assets/main_logo.svg"
+import EmailInput from "@components/EmailInput"
+// Assets
+import GobblerPhoto from "@assets/pics/gobbler_main.jpeg"
+import LinkIcon from "@assets/icons/linkedin.svg"
+import FacebookIcon from "@assets/icons/facebook.svg"
+import DiscordIcon from "@assets/icons/discord.svg"
+import InstaIcon from "@assets/icons/instagram.svg"
 
 
 function Home() {
     return (
-        <div className="min-h-screen flex flex-col">
-            <Navbar />
+        <div className="flex flex-col">
             {/* Hero Section */}
-            <main className="flex-grow bg-[#861f41] p-6 flex items-center justify-center min-h-screen">
+            <main className="flex-grow bg-csc-maroon-bg p-6 flex items-center justify-center">
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                     <div className="text-left max-w-lg space-y-11">
-                        <h1 className="text-white text-7xl font-bold font-['Outfit']">
+                        <h1>
                             CS Careers at Virginia Tech
                         </h1>
-                        <p className="text-white text-[25px] font-light font-['Outfit'] leading-10 mt-4">
+                        <p className="text-white">
                             Virginia Tech’s fastest growing technology organization.
                             Re-defining computer science on campus.
                         </p>
                         <div className="flex gap-6 mt-8">
-                            <button className="bg-[#d6995d] text-[#faefef] text-2xl font-semibold font-['Outfit'] tracking-wide py-4 px-8 rounded-full">
+                            <button className="orange-btn-primary">
                                 Who We Are
                             </button>
-                            <button className="border-4 border-[#d6995d] text-[#fdfbfb] text-2xl font-semibold font-['Outfit'] tracking-wide py-4 px-8 rounded-full">
+                            <button className="orange-btn-secondary">
                                 Get Involved
                             </button>
                         </div>
@@ -43,14 +41,15 @@ function Home() {
                 </div>
             </main>
 
-            {/* Mission Section */}
-            <div className="w-full min-h-[890px] flex items-center bg-[#d6995d] p-12">
+            {/* Hero Section 2 */}
+            <div className="w-full min-h-[890px] flex items-center bg-csc-organge-bg p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
-                    <div className="bg-[#861f41] text-white rounded-[50px] p-8 flex flex-col space-y-10 w-[60%] h-[420px]">
-                        <h2 className="text-[55px] font-bold font-['Outfit'] leading-[55px]">
+                    {/* Left Content (Mission Statement) */}
+                    <div className="bg-csc-maroon-bg text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[60%]">
+                        <h2>
                             Our Mission
                         </h2>
-                        <p className="text-[30px] font-light font-['Outfit'] leading-[60px] text-[#fdf6f6]">
+                        <p>
                             To foster a robust educational space where students interested
                             in computer science can flourish on their journey to the job market.
                         </p>
@@ -66,37 +65,35 @@ function Home() {
                 </div>
             </div>
             {/* Follow Us Section */}
-            <div className="w-full flex flex-col items-center bg-[#861f41] py-16 pb-40">
+            <div className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-40">
                 <div className="w-full text-center mb-40">
-                    <h2 className="text-white text-[70px] font-bold font-['Outfit'] leading-[77px]">
+                    <h2>
                         Follow Us
                     </h2>
-                    <div className="w-[309.26px] h-[11px] bg-[#d6995d] mx-auto mt-2"></div>
+                    <div className="w-[309.26px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
                 </div>
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
-                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">
+                    <div className="bg-csc-organge-bg text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">
                         <img src={InstaIcon} alt="Instagram" className="w-[154px] h-[148px] m-4" />
                         <img src={LinkIcon} alt="LinkedIn" className="w-[149px] h-[149px] m-4" />
                         <img src={FacebookIcon} alt="Facebook" className="w-[143px] h-[143px] m-4" />
                         <img src={DiscordIcon} alt="Discord" className="w-[160px] h-[161px] m-4" />
                     </div>
 
-                    <div className="bg-[#d6995d] text-white rounded-[50px] p-8 flex flex-col justify-center items-center w-[550px] h-[370px] space-y-6">
-                        <h2 className="text-[40px] font-bold font-['Outfit'] leading-[44px]">
+                    <div className="bg-csc-organge-bg text-white rounded-[50px] p-8 flex flex-col justify-center items-center w-[550px] h-[370px] space-y-6">
+                        <h3>
                             CS Careers Newsletter
-                        </h2>
-                        <p className="text-[26px] font-normal font-['Outfit'] leading-7">
+                        </h3>
+                        <p>
                             Stay updated on events and opportunities!
                         </p>
                         <EmailInput />
-                        <button className="bg-[#861f41] rounded-[50px] w-64 h-[62.38px] text-white text-[23px] font-semibold font-['Helvetica']">
+                        <button className="maroon-btn-primary w-full">
                             Subscribe
                         </button>
                     </div>
                 </div>
             </div>
-
-            <Footer />
         </div>
 
     )
