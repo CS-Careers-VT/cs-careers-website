@@ -10,6 +10,9 @@ function App() {
     <>
       <BrowserRouter>
           <Routes>
+            {/* 404 Route */}
+            <Route path="*" element={<h1 className="text-black">404 Not Found</h1>} />`
+
 
             {/* Public Routes */}
             <Route element={<MainLayout />}>
