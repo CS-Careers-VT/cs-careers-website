@@ -5,6 +5,7 @@
 
 For the most up to date discussion and information, please check out the [Slack Channel](https://cscareersvt.slack.com/archives/C08A7AV5TJN).
 
+
 ## About
 
 This web application is built using [Vite](https://vite.dev/), [React](https://18.react.dev/), and [Tailwind CSS](https://v3.tailwindcss.com/docs/installation). The project is also configured with Typescript for static typiong and enhanced code quality.
