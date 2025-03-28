@@ -10,7 +10,6 @@ jobs:
     build-only:
         name: Dev - PR Build Verification
         runs-on: ubuntu-latest
-        if: github.event_name == 'pull_request'  # Ensures this only runs on PRs
         steps:
             - name: Checkout Repo
               uses: actions/checkout@master
