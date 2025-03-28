@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages";
+import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/index";
 import { MainLayout } from '@layouts';
 import Navbar from '@components/common/Navbar';
 import Footer from '@components/common/Footer';
