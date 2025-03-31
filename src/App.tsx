@@ -3,7 +3,8 @@ import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/in
 import { MainLayout, AuthLayout, AdminLayout } from '@layouts';
 // Admin Routes
 import { Login, ForgotPassword } from '@admin/auth/index';
-import { AdminHome, AdminEventManagement, AdminPhotoManagement, AdminManagement } from '@admin/pages/index';
+import { AdminHome, AdminPhotoManagement, AdminManagement } from '@admin/pages/index';
+import { AdminEventList, AdminEventForm } from '@admin/components/index';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
             {/* Public Routes */}
             <Route element={<MainLayout />}>
-              <Route path="/" element={<Home />} />
+              <Route index element={<Home />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path='/news-events' element={<NewsEvents />} />
               <Route path='/photo-gallery' element={<PhotoGallery />} />
@@ -33,8 +34,12 @@ function App() {
 
               {/* Admin Routes - Must be authenticated to access */}
               <Route element={<AdminLayout />}>
-                <Route path="" element={<AdminHome />} />
-                <Route path="events" element={<AdminEventManagement />} />
+                <Route index element={<AdminHome />} />
+                <Route path="events">
+                  <Route index element={<AdminEventList />} />
+                  <Route path="new" element={<AdminEventForm />} />
+                  <Route path="edit/:id" element={<AdminEventForm />} />
+                </Route>
                 <Route path="photos" element={<AdminPhotoManagement />} />
                 <Route path="admin-management" element={<AdminManagement/>} />
               </Route>
