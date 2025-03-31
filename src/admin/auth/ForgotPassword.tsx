@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '@config/firebase';
 
@@ -40,11 +41,11 @@ function ForgotPassword() {
           />
         <div className="flex gap-4">
             <div className="flex-grow">
-                <a href="/admin/auth/login">
-                <button type="button" className="text-white border-white border-2 rounded-md py-4 text-xl w-full">
-                    Back
-                </button>
-                </a>
+                <Link to="/admin/auth/login">
+                  <button type="button" className="text-white border-white border-2 rounded-md py-4 text-xl w-full">
+                      Back
+                  </button>
+                </Link>
             </div>
             <button type="submit" disabled={loading} className="bg-csc-organge rounded-md py-4 text-white disabled:bg-opacity-20 text-xl flex-1">
                 {loading ? 'Sending...' : 'Send Reset Email'}

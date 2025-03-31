@@ -1,16 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@config/firebase";
-
-// function AdminLayout() {
-//   return (
-//     <div className="flex min-h-screen">
-//       <div className="flex-1 p-6 bg-gray-100">
-//         <Outlet />
-//       </div>
-//     </div>
-//   );
-// };
+import AdminNavbar from "@admin/components/AdminNavbar";
 
 const AdminLayout = () => {
   const [user, loading] = useAuthState(auth);
@@ -26,7 +17,12 @@ const AdminLayout = () => {
   }
 
   // If the user is authenticated, render the protected component(s)
-  return <Outlet />;
+  return (
+    <>
+      <AdminNavbar />
+      <Outlet />;
+    </>
+  )
 };
 
 

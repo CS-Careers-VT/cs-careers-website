@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@config/firebase';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -48,9 +49,9 @@ function Login() {
               required
             />
             <p className="text-sm text-gray-100">
-              <a href="forgot-password">
+              <Link to="/admin/auth/forgot-password">
                 Forgot Password?
-              </a>
+              </Link>
             </p>
           </div>
           <button type="submit" disabled={loading} className="bg-csc-organge rounded-md py-4 text-white disabled:bg-opacity-20 text-xl">

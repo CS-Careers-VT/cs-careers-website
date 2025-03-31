@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/index";
-import Login from '@admin/auth/Login';
 import { MainLayout, AuthLayout, AdminLayout } from '@layouts';
-import ForgotPassword from '@admin/auth/ForgotPassword';
-import AdminHome from '@admin/AdminHome';
+// Admin Routes
+import { Login, ForgotPassword } from '@admin/auth/index';
+import { AdminHome, AdminEventManagement, AdminPhotoManagement, AdminManagement } from '@admin/pages/index';
 
 
 function App() {
@@ -34,6 +34,9 @@ function App() {
               {/* Admin Routes - Must be authenticated to access */}
               <Route element={<AdminLayout />}>
                 <Route path="" element={<AdminHome />} />
+                <Route path="events" element={<AdminEventManagement />} />
+                <Route path="photos" element={<AdminPhotoManagement />} />
+                <Route path="admin-management" element={<AdminManagement/>} />
               </Route>
             </Route>
 
