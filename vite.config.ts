@@ -12,6 +12,7 @@ export default defineConfig({
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@config': path.resolve(__dirname, 'src/config'),
+      '@admin': path.resolve(__dirname, 'src/admin'),
     }
   }
 })

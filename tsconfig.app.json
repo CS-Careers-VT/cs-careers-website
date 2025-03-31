@@ -29,6 +29,7 @@
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"],
       "@config/*": ["config/*"],
+      "@admin/*": ["admin/*"],
       "@pages": ["pages/index.ts"],
       "@layouts": ["layouts/index.ts"]
     },

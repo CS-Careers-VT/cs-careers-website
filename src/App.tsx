@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/index";
-import { MainLayout } from '@layouts';
-import Navbar from '@components/common/Navbar';
-import Footer from '@components/common/Footer';
-
+import Login from '@admin/auth/Login';
+import { MainLayout, AuthLayout } from '@layouts';
 
 function App() {
   return (
@@ -21,6 +19,15 @@ function App() {
               <Route path='/news-events' element={<NewsEvents />} />
               <Route path='/photo-gallery' element={<PhotoGallery />} />
               <Route path='/sponsorships' element={<Sponsorships />} />
+            </Route>
+
+            <Route path="/admin">
+              {/* Admin Auth Routes */}
+              <Route element={<AuthLayout />}>
+                <Route path="login" element={<Login/>} />
+              </Route>
+
+              {/* AdminRoutes */}
             </Route>
 
           </Routes>
