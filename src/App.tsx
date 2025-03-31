@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/index";
 import Login from '@admin/auth/Login';
 import { MainLayout, AuthLayout } from '@layouts';
+import ForgotPassword from '@admin/auth/ForgotPassword';
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
 
             <Route path="/admin">
               {/* Admin Auth Routes */}
-              <Route element={<AuthLayout />}>
+              <Route element={<AuthLayout />} path="auth">
                 <Route path="login" element={<Login/>} />
+                <Route path="forgot-password" element={<ForgotPassword/>} />
               </Route>
 
               {/* AdminRoutes */}

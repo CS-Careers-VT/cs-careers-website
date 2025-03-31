@@ -24,8 +24,6 @@ function Login() {
     }
   };
 
-  // setError("Blah");
-
   return (
     <div>
       <h1 className="text-center">Login</h1>
@@ -40,23 +38,30 @@ function Login() {
             onChange={e => setEmail(e.target.value)}
             required
           />
-          <input
-            type="password"
-            placeholder="Password"
-            className="text-xl font-light leading-10 py-1 px-2"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              className="text-xl font-light leading-10 py-1 px-2 w-full"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
+            <p className="text-sm text-gray-100">
+              <a href="forgot-password">
+                Forgot Password?
+              </a>
+            </p>
+          </div>
           <button type="submit" disabled={loading} className="bg-csc-organge rounded-md py-4 text-white disabled:bg-opacity-20 text-xl">
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
         </div>
       </form>
 
       {error && (
         <div className="bg-white mt-12 rounded-sm p-4">
-          <p className="text-xl">{error}</p>
+          <p className="text-xl text-red-600">{error}</p>
         </div>
       )}
     </div>
