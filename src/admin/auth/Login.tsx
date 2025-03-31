@@ -15,7 +15,7 @@ function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in:", userCredential.user);
-      // Here you can redirect the user or update your state/context as needed
+      window.location.href = '/admin';
     } catch (err: any) {
       setError(err.message);
       console.error("Error logging in:", err);

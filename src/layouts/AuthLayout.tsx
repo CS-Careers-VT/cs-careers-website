@@ -1,6 +1,21 @@
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@config/firebase';
 
 function AuthLayout() {
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    // Optionally, render a loading indicator while waiting for auth state
+    return <div>Loading...</div>;
+  }
+
+  if (user) {
+    // Redirect to the admin home page if the user is already authenticated
+    return <Navigate to="/admin" replace />;
+  }
+
+  // If the user is not authenticated, render the auth pages
   return (
     <>
         <div className="flex justify-center align-middle min-h-screen bg-gradient-to-b from-csc-maroon to-csc-maroon-bg">

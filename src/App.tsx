@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages/index";
 import Login from '@admin/auth/Login';
-import { MainLayout, AuthLayout } from '@layouts';
+import { MainLayout, AuthLayout, AdminLayout } from '@layouts';
 import ForgotPassword from '@admin/auth/ForgotPassword';
+import AdminHome from '@admin/AdminHome';
+
 
 function App() {
   return (
@@ -29,7 +31,10 @@ function App() {
                 <Route path="forgot-password" element={<ForgotPassword/>} />
               </Route>
 
-              {/* AdminRoutes */}
+              {/* Admin Routes - Must be authenticated to access */}
+              <Route element={<AdminLayout />}>
+                <Route path="" element={<AdminHome />} />
+              </Route>
             </Route>
 
           </Routes>
