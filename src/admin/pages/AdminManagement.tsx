@@ -3,12 +3,15 @@ import AdminUserTable from '@admin/components/AdminUsersTable';
 import AdminUserForm from '@admin/components/AdminUsersForm';
 import { AdminData, deleteUser, listUsers } from '@admin/services/adminService';
 import ConfirmationModal from '@admin/components/ConfirmationModal';
+import { resetPassword } from '@admin/services/authService';
+import InformationModal from '@admin/components/InformationModal';
 
 function AdminManagement() {
   const [adminUsers, setAdminUsers] = useState<AdminData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [confirmDeleteModalOpen, setConfirmDeleteModalOpen] = useState(false);
+  const [resetPasswordModal, setResetPasswordModal] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   const loadAdminUsers = async () => {
@@ -48,23 +51,22 @@ function AdminManagement() {
     }
   };
 
-  
+
   const handleCancelDelete = () => {
     setConfirmDeleteModalOpen(false);
     setSelectedUserId(null);
   };
 
 
-  // const handleResetPassword = async (uid: string) => {
-  //   if (window.confirm('Trigger password reset for this admin user?')) {
-  //     try {
-  //       await resetPasswordForUser(uid);
-  //       alert('Password reset triggered');
-  //     } catch (err: any) {
-  //       setError(err.message);
-  //     }
-  //   }
-  // };
+  const handleResetPassword = async (email: string) => {
+    setResetPasswordModal(true);
+    try {
+      await resetPassword(email);
+      // alert('Password reset triggered');
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
 
   return (
     <div className="p-4">
@@ -76,7 +78,7 @@ function AdminManagement() {
         <AdminUserTable
           adminUsers={adminUsers}
           onDelete={handleRequestDelete}
-          // onResetPassword remains commented if not used
+          onResetPassword={handleResetPassword}
         />
       )}
       <hr className="my-6" />
@@ -88,6 +90,13 @@ function AdminManagement() {
         message="Are you sure you want to delete this admin user?"
         onConfirm={handleConfirmDelete}
         onCancel={handleCancelDelete}
+      />
+
+      <InformationModal
+        isOpen={resetPasswordModal}
+        title="Reset Password"
+        message="Password reset email sent successfully."
+        onClose={() => setResetPasswordModal(false)}
       />
     </div>
   );

@@ -1,13 +1,12 @@
 import { AdminData } from '@admin/services/adminService';
-import { UserInfo } from 'firebase/auth';
 
 interface AdminUsersTableProps {
   adminUsers: AdminData[];
   onDelete: (uid: string) => void;
-  // onResetPassword: (uid: string) => void;
+  onResetPassword: (uid: string) => void;
 }
 
-function AdminUsersTable({ adminUsers, onDelete }: AdminUsersTableProps) {
+function AdminUsersTable({ adminUsers, onDelete, onResetPassword }: AdminUsersTableProps) {
   return (
     <table className="w-full border-collapse">
       <thead>
@@ -26,7 +25,7 @@ function AdminUsersTable({ adminUsers, onDelete }: AdminUsersTableProps) {
             <td className="border px-4 py-2">{user.uid}</td>
             <td className="border px-4 py-2 space-x-2">
               <button
-                // onClick={() => onResetPassword(user.uid)}
+                onClick={() => onResetPassword(user.email)}
                 className="bg-blue-500 text-white px-2 py-1 rounded"
               >
                 Reset Password
