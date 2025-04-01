@@ -1,6 +1,5 @@
 import { auth, functions } from '@config/firebase';
 import { httpsCallable } from 'firebase/functions';
-import { UserInfo } from 'firebase/auth';
 
 export interface CreateAdminUserData {
   firstName: string;
@@ -26,18 +25,20 @@ export const createAdminUser = async (
   return result.data as CreateAdminUserResponse;
 };
 
+export interface AdminData {
+  uid: string;
+  email: string;
+  displayName: string;
+}
+
+export const listUsers = async (): Promise<AdminData[]> => {
+  const getUsersCallable = httpsCallable(functions, 'listUsers');
+  const result = await getUsersCallable();
+  return result.data as AdminData[];
+};
+
 export const deleteAdminUser = async (uid: string): Promise<string> => {
   const deleteUserCallable = httpsCallable(functions, 'deleteUser');
   const result = await deleteUserCallable({ uid });
   return result.data as string;
-};
-
-/**
- * 
- * @returns 
- */
-export const fetchAdminUsers = async (): Promise<UserInfo[]> => {
-  const getUsersCallable = httpsCallable(functions, 'listUsers');
-  const result = await getUsersCallable();
-  return result.data as UserInfo[];
 };

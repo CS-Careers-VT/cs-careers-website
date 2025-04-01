@@ -69,3 +69,24 @@ exports.createAdminUser = functions.https.onCall((data, context) => {
     });
 });
 
+/**
+ * List all users in the Firebase Authentication
+ */
+exports.listUsers = functions.https.onCall((data, context) => {
+  
+    return admin
+      .auth()
+      .listUsers()
+      .then((listUsersResult) => {
+        // go through users array, and deconstruct user objects down to required fields
+        const users = listUsersResult.users.map((user) => {
+          const { uid, email, displayName } = user
+          return { uid, email, displayName }
+        })
+  
+        return users;
+      })
+      .catch((error) => {
+        return { error: 'Error listing users' }
+      })
+  });

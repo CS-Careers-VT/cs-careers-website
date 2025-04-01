@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
 import AdminUserTable from '@admin/components/AdminUsersTable';
 import AdminUserForm from '@admin/components/AdminUsersForm';
-import { deleteAdminUser, fetchAdminUsers } from '@admin/services/adminService';
-import { UserInfo } from 'firebase/auth';
+import { AdminData, deleteAdminUser, listUsers } from '@admin/services/adminService';
 
 function AdminManagement() {
-  const [adminUsers, setAdminUsers] = useState<UserInfo[]>([]);
+  const [adminUsers, setAdminUsers] = useState<AdminData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const loadAdminUsers = async () => {
     setLoading(true);
     try {
-      const users = await fetchAdminUsers();
+      const users = await listUsers();
       setAdminUsers(users);
     } catch (err: any) {
       setError(err.message);

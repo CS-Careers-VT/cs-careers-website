@@ -1,7 +1,8 @@
+import { AdminData } from '@admin/services/adminService';
 import { UserInfo } from 'firebase/auth';
 
 interface AdminUsersTableProps {
-  adminUsers: UserInfo[];
+  adminUsers: AdminData[];
   onDelete: (uid: string) => void;
   // onResetPassword: (uid: string) => void;
 }
