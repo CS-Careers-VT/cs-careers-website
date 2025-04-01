@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import AdminUserTable from '@admin/components/AdminUsersTable';
 import AdminUserForm from '@admin/components/AdminUsersForm';
-import { AdminData, deleteAdminUser, listUsers } from '@admin/services/adminService';
+import { AdminData, deleteUser, listUsers } from '@admin/services/adminService';
+import ConfirmationModal from '@admin/components/ConfirmationModal';
 
 function AdminManagement() {
   const [adminUsers, setAdminUsers] = useState<AdminData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [confirmDeleteModalOpen, setConfirmDeleteModalOpen] = useState(false);
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   const loadAdminUsers = async () => {
     setLoading(true);
@@ -24,16 +27,33 @@ function AdminManagement() {
     loadAdminUsers();
   }, []);
 
-  const handleDelete = async (uid: string) => {
-    if (window.confirm('Are you sure you want to delete this admin user?')) {
+
+  const handleRequestDelete = (uid: string) => {
+    setSelectedUserId(uid);
+    setConfirmDeleteModalOpen(true);
+  };
+
+
+  const handleConfirmDelete = async () => {
+    if (selectedUserId) {
       try {
-        await deleteAdminUser(uid);
+        await deleteUser(selectedUserId);
         loadAdminUsers();
       } catch (err: any) {
         setError(err.message);
+      } finally {
+        setConfirmDeleteModalOpen(false);
+        setSelectedUserId(null);
       }
     }
   };
+
+  
+  const handleCancelDelete = () => {
+    setConfirmDeleteModalOpen(false);
+    setSelectedUserId(null);
+  };
+
 
   // const handleResetPassword = async (uid: string) => {
   //   if (window.confirm('Trigger password reset for this admin user?')) {
@@ -55,12 +75,20 @@ function AdminManagement() {
       ) : (
         <AdminUserTable
           adminUsers={adminUsers}
-          onDelete={handleDelete}
-          // onResetPassword={handleResetPassword}
+          onDelete={handleRequestDelete}
+          // onResetPassword remains commented if not used
         />
       )}
       <hr className="my-6" />
       <AdminUserForm onUserCreated={loadAdminUsers} />
+
+      <ConfirmationModal
+        isOpen={confirmDeleteModalOpen}
+        title="Confirm Delete"
+        message="Are you sure you want to delete this admin user?"
+        onConfirm={handleConfirmDelete}
+        onCancel={handleCancelDelete}
+      />
     </div>
   );
 }

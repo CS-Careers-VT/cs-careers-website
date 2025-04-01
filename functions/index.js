@@ -23,13 +23,17 @@ const corsHandler = cors({ origin: true });
 /**
  * Add a new admin to the Firebase Authentication
  */
-exports.createAdminUser = functions.https.onCall((data, context) => {
+exports.createAdminUser = functions.https.onCall(async (request, response) => {
     // const isAdmin = context.auth.token.admin === true
     // if (!isAdmin) {
     //   return { error: `Unauthorized.` }
     // }
-
-    const { firstName, lastName, email, password, createdBy } = data;
+    console.log("Request data:", request.data);
+    const firstName = request.data.firstName;
+    const lastName = request.data.lastName;
+    const email = request.data.email;
+    const password = request.data.password;
+    const createdBy = request.data.createdBy;
 
     return admin.auth().createUser({
         email: email,
@@ -72,7 +76,7 @@ exports.createAdminUser = functions.https.onCall((data, context) => {
 /**
  * List all users in the Firebase Authentication
  */
-exports.listUsers = functions.https.onCall((data, context) => {
+exports.listUsers = functions.https.onCall((request, response) => {
   
     return admin
       .auth()
@@ -90,3 +94,20 @@ exports.listUsers = functions.https.onCall((data, context) => {
         return { error: 'Error listing users' }
       })
   });
+
+/**
+ * Delete a user in the Firebase Authentication
+ */
+exports.deleteUser = functions.https.onCall(async (request, response) => {
+    console.log("Request data:", request.data);
+    const uid = request.data.uid;
+
+    return admin.auth().deleteUser(uid)
+        .then(() => {
+            return { message: `User with UID ${uid} deleted successfully.` };
+        })
+        .catch((error) => {
+            console.error("Error deleting user:", error);
+            return { error: `Error deleting user: ${error}` };
+        });
+});
