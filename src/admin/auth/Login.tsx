@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@config/firebase';
 import { Link } from 'react-router-dom';
+import { emailLogin } from '@admin/services/authService';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -14,8 +13,8 @@ function Login() {
     setLoading(true);
     setError(null);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log("User logged in:", userCredential.user);
+      const user = await emailLogin(email, password);
+      console.log("User logged in:", user);
       window.location.href = '/admin';
     } catch (err: any) {
       setError(err.message);

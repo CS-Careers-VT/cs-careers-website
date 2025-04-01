@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '@config/firebase';
+import { resetPassword } from '@admin/services/authService';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -15,7 +14,7 @@ function ForgotPassword() {
     setError(null);
     setMessage(null);
     try {
-      await sendPasswordResetEmail(auth, email);
+      await resetPassword(email);
       setMessage('Password reset email sent. Please check your inbox.');
     } catch (err: any) {
       setError(err.message);
