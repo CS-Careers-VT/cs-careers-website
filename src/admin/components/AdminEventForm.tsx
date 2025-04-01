@@ -44,8 +44,8 @@ function AdminEventForm() {
     setLoading(true);
     try {
       if (isEditing && id) {
-        const docRef = doc(firestore, 'events', id);
-        await updateDoc(docRef, eventData);
+        // const docRef = doc(firestore, 'events', id);
+        // await updateDoc(docRef, eventData);
         console.log('Event updated');
       } else {
         const eventsCollection = collection(firestore, 'events');
