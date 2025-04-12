@@ -70,7 +70,7 @@ function Home() {
                     <h2>
                         Follow Us
                     </h2>
-                    <div className="w-[309.26px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
+                    <div className="w-[215px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
                 </div>
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
                     <div className="bg-csc-organge-bg text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">

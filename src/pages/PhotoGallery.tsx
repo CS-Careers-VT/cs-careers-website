@@ -64,7 +64,7 @@ function PhotoGallery() {
 
 
     return (
-        <div className="w-full bg-csc-maroon-bg text-center">
+        <div className="w-full bg-csc-maroon-bg text-center mt-20">
             <h2>
                 Photo Gallery
             </h2>
