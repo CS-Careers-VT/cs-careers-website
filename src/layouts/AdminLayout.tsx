@@ -19,8 +19,14 @@ const AdminLayout = () => {
   // If the user is authenticated, render the protected component(s)
   return (
     <>
+    <div className="min-h-screen bg-gray-300">
       <AdminNavbar />
-      <Outlet />;
+      <div className="p-8">
+        <div className="p-4 rounded-md shadow-md bg-white">
+          <Outlet />
+        </div>
+      </div>
+    </div>
     </>
   )
 };

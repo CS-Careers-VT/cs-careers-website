@@ -48,7 +48,10 @@ export interface AdminData {
 export const listUsers = async (): Promise<AdminData[]> => {
   const getUsersCallable = httpsCallable(functions, 'listUsers');
   const result = await getUsersCallable();
-  return result.data as AdminData[];
+  const users = result.data as AdminData[];
+
+  console.log('Users:', users);
+  return users;
 };
 
 export const deleteUser = async (uid: string): Promise<string> => {

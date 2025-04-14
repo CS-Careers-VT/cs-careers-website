@@ -28,6 +28,7 @@ exports.createAdminUser = functions.https.onCall(async (request, response) => {
     // if (!isAdmin) {
     //   return { error: `Unauthorized.` }
     // }
+
     console.log("Request data:", request.data);
     const firstName = request.data.firstName;
     const lastName = request.data.lastName;
@@ -73,11 +74,13 @@ exports.createAdminUser = functions.https.onCall(async (request, response) => {
     });
 });
 
+
 /**
  * List all users in the Firebase Authentication
  */
 exports.listUsers = functions.https.onCall((request, response) => {
   
+    
     return admin
       .auth()
       .listUsers()
@@ -94,6 +97,7 @@ exports.listUsers = functions.https.onCall((request, response) => {
         return { error: 'Error listing users' }
       })
   });
+
 
 /**
  * Delete a user in the Firebase Authentication
