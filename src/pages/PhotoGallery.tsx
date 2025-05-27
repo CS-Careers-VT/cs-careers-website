@@ -74,7 +74,7 @@ function PhotoGallery() {
                 {images.map((filename, index) => (
                     <div key={index} className="w-full h-64 max-w-[400px] max-h-[400px] mx-auto">
                         <img
-                            src={`../../src/assets/pics/${filename}`}
+                            src={`../../src/assets/pics/events/${filename}`}
                             alt={`Gallery image ${index + 1}`}
                             className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
                             onClick={() => openImage(index)}
@@ -104,7 +104,7 @@ function PhotoGallery() {
 
                     {/* Image */}
                     <img
-                        src={`../../src/assets/pics/${images[selectedIndex]}`}
+                        src={`../../src/assets/pics/events/${images[selectedIndex]}`}
                         alt="Expanded"
                         className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-xl"
                     />

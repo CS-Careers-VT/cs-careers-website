@@ -1,7 +1,7 @@
-import MainLogo from "@assets/main_logo.svg"
+import MainLogo from "@assets/icons/main_logo.svg"
 import EmailInput from "@components/EmailInput"
 // Assets
-import GobblerPhoto from "@assets/pics/gobbler_main.jpeg"
+import GobblerPhoto from "@assets/pics/events/gobbler_main.jpeg"
 import LinkIcon from "@assets/icons/linkedin.svg"
 import FacebookIcon from "@assets/icons/facebook.svg"
 import DiscordIcon from "@assets/icons/discord.svg"
