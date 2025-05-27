@@ -1,5 +1,10 @@
-// ExecCard.jsx
-export default function ExecCard({ name, role, photo }) {
+interface CardProperties {
+    name: string;
+    role: string;
+    photo: string;
+}
+
+export default function ExecCard({ name, role, photo }: CardProperties) {
     return (
         <div className="relative flex-shrink-0 w-64 sm:w-72 md:w-80 aspect-[3/4]">
             {/* orange pill (behind) */}
