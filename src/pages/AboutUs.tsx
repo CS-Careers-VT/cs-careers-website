@@ -24,7 +24,7 @@ function AboutUs() {
             </div>
             <div className="w-[360px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
 
-            <div className="flex flex-wrap justify-center gap-6 mt-20 mb-60">
+            <div className="flex flex-wrap justify-center gap-6 mt-20 mb-80">
                 {/* Box 1 */}
                 <div className="w-80 h-60 relative rounded-[50px]">
                     <div className="w-80 h-60 left-0 top-0 absolute bg-[#D6995D] rounded-[50px]"></div>
@@ -53,7 +53,7 @@ function AboutUs() {
                     How We Serve
                 </h2>
 
-                <div className="mt-1 w-4/5 md:w-[385px] h-3.5 bg-csc-maroon-bg"></div>
+                <div className="w-4/5 md:w-[385px] h-3 bg-csc-maroon-bg"></div>
                 {/* Content Section */}
                 <div className="mt-16 w-full max-w-7xl flex flex-col md:flex-row justify-between gap-10 px-4">
                     {/* Left Side: Paragraphs */}
@@ -88,7 +88,7 @@ function AboutUs() {
                     Board of Directors
                 </h3>
             
-                <div className="mt-12 flex flex-wrap justify-center gap-10">
+                <div className="mt-12 flex flex-wrap justify-center gap-16">
                     <ExecCard
                     name="Lauren Ruiz-Arenas"
                     role="President"
@@ -145,7 +145,7 @@ function AboutUs() {
                     Officers
                 </h3>
             
-                <div className="mt-12 flex flex-wrap justify-center gap-10">
+                <div className="mt-12 flex flex-wrap justify-center gap-16">
                     <ExecCard
                     name="Nina Yang"
                     role="Outreach Chair"
