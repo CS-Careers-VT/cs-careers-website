@@ -47,7 +47,7 @@ function Home() {
                     {/* Left Content (Mission Statement) */}
                     <div className="bg-csc-maroon-bg text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[60%]">
                         <h2>
-                            Our Mission
+                            Our Vision
                         </h2>
                         <p>
                             To foster a robust educational space where students interested
