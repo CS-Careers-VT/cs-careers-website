@@ -29,13 +29,17 @@ function NewsEvents() {
                 <div className="w-[330px] h-[11px] bg-csc-organge-bg mx-auto mt-1" />
             </div>
 
-            {/* Timeline Container */}
-            <div className="relative mt-28 px-4 max-w-3xl mx-auto">
-                {/* Continuous vertical line */}
-                <div className="absolute left-3 top-0 bottom-0 w-px bg-white" />
+            {/* Timeline Grid */}
+            <div className="relative mt-28 px-4 max-w-4xl mx-auto">
 
-                {/* Events List */}
-                <div className="flex flex-col space-y-12 relative z-10">
+                <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
+
+                    {/* ─── continuous line down column 2 ─── */}
+                    <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
+                        <div className=" w-px h-[92%] bg-white" />
+                    </div>
+
+
                     {events.map((e, idx) => (
                         <EventItem
                             key={idx}
@@ -45,6 +49,13 @@ function NewsEvents() {
                         />
                     ))}
                 </div>
+            </div>
+
+            {/* Bottom Message */}
+            <div className="mt-36 text-center">
+                <h3 className="text-white text-4xl font-semibold font-['Outfit']">
+                    Fall 2025: Coming Soon!
+                </h3>
             </div>
         </div>
     )
