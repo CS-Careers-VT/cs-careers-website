@@ -2,9 +2,10 @@ interface EventItemProps {
     title: string;
     date: string;
     imageSrc: string;
+    description: string;
 }
 
-export default function EventItem({ title, date, imageSrc }: EventItemProps) {
+export default function EventItem({ title, date, imageSrc, description }: EventItemProps) {
     return (
         <>
             {/* ← Date (col 1) */}
@@ -14,7 +15,6 @@ export default function EventItem({ title, date, imageSrc }: EventItemProps) {
 
             {/* ← Node (col 2) */}
             <div className="flex justify-center items-start">
-                {/* mt-2 (8px) nudges the 24px circle down so its center lines up with the title text */}
                 <div className="relative z-10 w-6 h-6 mt-2 bg-csc-organge-bg rounded-full" />
             </div>
 
@@ -26,8 +26,11 @@ export default function EventItem({ title, date, imageSrc }: EventItemProps) {
                 <img
                     src={imageSrc}
                     alt={title}
-                    className="w-full max-w-[810px] aspect-[81/53] rounded-2xl object-cover"
+                    className="w-full max-w-[810px] aspect-[81/53] rounded-2xl object-cover mb-4"
                 />
+                <p className="text-white text-lg font-light font-['Outfit']">
+                    {description}
+                </p>
             </div>
         </>
     );

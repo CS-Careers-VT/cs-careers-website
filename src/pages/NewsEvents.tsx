@@ -1,3 +1,5 @@
+// NewsEvents.tsx
+
 import EventItem from '@components/EventItem';
 import MicrosoftPhoto from '@assets/pics/events/msft_event.png';
 import VTHacksPhoto from "@assets/pics/events/VTHacks Gian.jpeg"
@@ -10,15 +12,56 @@ import SocialPhoto from "@assets/pics/events/SocialEvent.jpeg"
 
 function NewsEvents() {
     const events = [
-        { title: 'VTHacks LinkedIn Workshop', date: 'February 2nd', imageSrc: VTHacksPhoto },
-        { title: 'Resume Workshop', date: 'February 9th', imageSrc: ResumeWorkshopPhoto },
-        { title: 'Finding Your Career Path w/ Rishi Jaitly', date: 'March 3rd', imageSrc: RishiPhoto },
-        { title: 'Careers in Academia', date: 'April 3rd', imageSrc: AcademiaPhoto },
-        { title: 'Women in CS w/ Lockheed Martin', date: 'April 10th', imageSrc: MicrosoftPhoto },
-        { title: 'Freshman CS Starter Pack', date: 'April 17th', imageSrc: StarterPackPhoto },
-        { title: 'AI Perspectives', date: 'April 24th', imageSrc: AiPhoto },
-        { title: 'CS Social', date: 'May 1st', imageSrc: SocialPhoto }
+        {
+            title: 'VTHacks LinkedIn Workshop',
+            date: 'February 2nd',
+            imageSrc: VTHacksPhoto,
+            description: 'Teaching how to optimize your LinkedIn profile and grow your professional presence online.'
+        },
+        {
+            title: 'Resume Workshop',
+            date: 'February 9th',
+            imageSrc: ResumeWorkshopPhoto,
+            description: 'Providing expert resume tips and feedback before CS Source.'
+        },
+        {
+            title: 'Finding Your Career Path w/ Rishi Jaitly',
+            date: 'March 3rd',
+            imageSrc: RishiPhoto,
+            description: 'A conversation with the ex-FAANG exec on navigating the tech industry with purpose.'
+        },
+        {
+            title: 'Careers in Academia',
+            date: 'April 3rd',
+            imageSrc: AcademiaPhoto,
+            description: 'Panel discussion on what it’s like to pursue a career in higher education.'
+        },
+        {
+            title: 'Women in CS w/ Lockheed Martin',
+            date: 'April 10th',
+            imageSrc: MicrosoftPhoto,
+            description: 'Celebrate and support women in tech with professionals from Lockheed Martin.'
+        },
+        {
+            title: 'Freshman CS Starter Pack',
+            date: 'April 17th',
+            imageSrc: StarterPackPhoto,
+            description: 'A comprehensive guide for first-year CS majors covering internships, clubs, and course planning.'
+        },
+        {
+            title: 'AI Perspectives',
+            date: 'April 24th',
+            imageSrc: AiPhoto,
+            description: 'Exploring the evolving world of AI with industry experts across different domains.'
+        },
+        {
+            title: 'CS Social',
+            date: 'May 1st',
+            imageSrc: SocialPhoto,
+            description: 'Unwinding with peers before finals—games, food, and good vibes!'
+        }
     ];
+
     return (
         <div className="bg-csc-maroon-bg min-h-screen pt-20 pb-20">
             {/* Header */}
@@ -31,14 +74,11 @@ function NewsEvents() {
 
             {/* Timeline Grid */}
             <div className="relative mt-28 px-4 max-w-4xl mx-auto">
-
                 <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
-
-                    {/* ─── continuous line down column 2 ─── */}
+                    {/* Continuous line down column 2 */}
                     <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
-                        <div className=" w-px h-[92%] bg-white" />
+                        <div className="w-px h-[92%] bg-white" />
                     </div>
-
 
                     {events.map((e, idx) => (
                         <EventItem
@@ -46,6 +86,7 @@ function NewsEvents() {
                             title={e.title}
                             date={e.date}
                             imageSrc={e.imageSrc}
+                            description={e.description}
                         />
                     ))}
                 </div>
@@ -58,7 +99,7 @@ function NewsEvents() {
                 </h3>
             </div>
         </div>
-    )
+    );
 }
 
 export default NewsEvents;
