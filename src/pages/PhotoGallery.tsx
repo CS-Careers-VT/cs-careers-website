@@ -10,13 +10,21 @@ function PhotoGallery() {
         "gobbler_main.jpeg",
         "msft_event.png",
         "pizza_party.png",
-        "VTHacks Misc 1.jpeg",
+        "CSSocial2.jpeg",
         "VTHacks Misc 2.jpeg",
-        "VTHacks Aaron.jpeg",
+        "Harjas.jpg",
         "VTHacks Gian.jpeg",
-        "VTHacks Stuti.jpeg",
+        "FYE.jpeg",
         "Anton VTHacks.jpeg",
-        "Gobbler Gabe.jpg"
+        "Gobbler Gabe.jpg",
+        "AIEvent2.jpeg",
+        "AIEvent3.jpeg",
+        "AntonCrowd.jpeg",
+        "CSSocial3.jpeg",
+        "RishiPhoto2.jpeg",
+        "RishiPhoto3.jpeg",
+        "AIEvent3.jpeg",
+        "Academia2.jpeg"
     ];
 
 
@@ -74,7 +82,7 @@ function PhotoGallery() {
                 {images.map((filename, index) => (
                     <div key={index} className="w-full h-64 max-w-[400px] max-h-[400px] mx-auto">
                         <img
-                            src={`../../src/assets/pics/${filename}`}
+                            src={`../../src/assets/pics/events/${filename}`}
                             alt={`Gallery image ${index + 1}`}
                             className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
                             onClick={() => openImage(index)}
@@ -104,7 +112,7 @@ function PhotoGallery() {
 
                     {/* Image */}
                     <img
-                        src={`../../src/assets/pics/${images[selectedIndex]}`}
+                        src={`../../src/assets/pics/events/${images[selectedIndex]}`}
                         alt="Expanded"
                         className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-xl"
                     />

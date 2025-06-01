@@ -1,20 +1,20 @@
-import FirstYearPhoto from "@assets/pics/first_year_experience.jpg"
-import MicrosoftPhoto from "@assets/pics/msft_event.png"
-import Alexa from "@assets/pics/Alexa.jpeg"
-import Amy from "@assets/pics/Amy.jpeg"
-import Harita from "@assets/pics/Harita.jpeg"
-import Lucas from "@assets/pics/Lucas.jpeg"
-import Nina from "@assets/pics/Nina.jpeg"
-import Reet from "@assets/pics/Reet.jpeg"
-import Aaron from "@assets/pics/Aaron.jpeg"
-import Gabe from "@assets/pics/Gabe.jpeg"
-import Gianfranco from "@assets/pics/Gianfranco.jpg"
-import Alex from "@assets/pics/Alex.jpeg"
-import Lauren from "@assets/pics/Lauren.jpeg"
-import Sam from "@assets/pics/Sam.jpeg"
-import Stuti from "@assets/pics/Stuti.jpeg"
-import Tarun from "@assets/pics/Tarun.jpeg"
-import ExecCard from "@components/common/ExecCard";
+import ExecCard         from "@components/ExecCard";
+import FirstYearPhoto   from "@assets/pics/events/first_year_experience.jpg";
+import MicrosoftPhoto   from "@assets/pics/events/msft_event.png";
+import Alexa            from "@assets/pics/headshots/Alexa.jpeg";
+import Amy              from "@assets/pics/headshots/Amy.jpeg";
+import Harita           from "@assets/pics/headshots/Harita.jpeg";
+import Lucas            from "@assets/pics/headshots/Lucas.jpeg";
+import Nina             from "@assets/pics/headshots/Nina.jpeg";
+import Reet             from "@assets/pics/headshots/Reet.jpeg";
+import Aaron            from "@assets/pics/headshots/Aaron.jpeg";
+import Gabe             from "@assets/pics/headshots/Gabe.jpeg";
+import Gianfranco       from "@assets/pics/headshots/Gianfranco.jpg";
+import Alex             from "@assets/pics/headshots/Alex.jpeg";
+import Lauren           from "@assets/pics/headshots/Lauren.jpeg";
+import Sam              from "@assets/pics/headshots/Sam.jpeg";
+import Stuti            from "@assets/pics/headshots/Stuti.jpeg";
+import Tarun            from "@assets/pics/headshots/Tarun.jpeg";
 
 function AboutUs() {
     return (

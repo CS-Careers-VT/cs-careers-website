@@ -1,7 +1,7 @@
-import MainLogo from "@assets/main_logo.svg"
+import MainLogo from "@assets/icons/main_logo.svg"
 import EmailInput from "@components/EmailInput"
 // Assets
-import GobblerPhoto from "@assets/pics/gobbler_main.jpeg"
+import GobblerPhoto from "@assets/pics/events/gobbler_main.jpeg"
 import LinkIcon from "@assets/icons/linkedin.svg"
 import FacebookIcon from "@assets/icons/facebook.svg"
 import DiscordIcon from "@assets/icons/discord.svg"
@@ -47,7 +47,7 @@ function Home() {
                     {/* Left Content (Mission Statement) */}
                     <div className="bg-csc-maroon-bg text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[60%]">
                         <h2>
-                            Our Mission
+                            Our Vision
                         </h2>
                         <p>
                             To foster a robust educational space where students interested
