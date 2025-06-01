@@ -22,7 +22,7 @@ function NewsEvents() {
             title: 'Resume Workshop',
             date: 'February 9th',
             imageSrc: ResumeWorkshopPhoto,
-            description: 'Providing expert resume tips and feedback before CS Source.'
+            description: 'Providing valuable resume tips and feedback before CS Source.'
         },
         {
             title: 'Finding Your Career Path w/ Rishi Jaitly',
