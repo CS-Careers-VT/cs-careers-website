@@ -27,9 +27,6 @@ function Navbar() {
             <Link to="/news-events" className="hover:text-gray-300 transition">News & Events</Link>
           </li>
           <li>
-            <Link to="/sponsorships" className="hover:text-gray-300 transition">Sponsorships</Link>
-          </li>
-          <li>
             <Link to="/photo-gallery" className="hover:text-gray-300 transition">Photo Gallery</Link>
           </li>
         </ul>

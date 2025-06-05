@@ -38,11 +38,11 @@ function Home() {
                             >
                                 Who We Are
                             </button>
-                            <button 
-                            className="orange-btn-secondary transform transition-transform duration-300 hover:scale-105"
-                            onClick={() => 
-                            handleButtonNav({ type: "section", ref: followUsRef})
-                            }>
+                            <button
+                                className="orange-btn-secondary transform transition-transform duration-300 hover:scale-105"
+                                onClick={() =>
+                                    handleButtonNav({ type: "section", ref: followUsRef })
+                                }>
                                 Get Involved
                             </button>
                         </div>
@@ -81,9 +81,9 @@ function Home() {
                 </div>
             </div>
             {/* Follow Us Section */}
-            <div 
-            ref={followUsRef}
-            className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-24">
+            <div
+                ref={followUsRef}
+                className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-24">
                 <div className="w-full text-center mb-28">
                     <h2>
                         Follow Us
@@ -153,9 +153,6 @@ function Home() {
                             Stay updated on events and opportunities!
                         </p>
                         <EmailInput />
-                        <button className="maroon-btn-primary w-full">
-                            Subscribe
-                        </button>
                     </div>
                 </div>
             </div>

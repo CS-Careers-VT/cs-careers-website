@@ -1,14 +1,14 @@
 // NewsEvents.tsx
 
 import EventItem from '@components/EventItem';
-import MicrosoftPhoto from '@assets/pics/events/msft_event.png';
-import VTHacksPhoto from "@assets/pics/events/VTHacks Gian.jpeg"
-import ResumeWorkshopPhoto from "@assets/pics/events/ResumeWorkshopStuti.jpeg"
+import ResumeWorkshopPhoto from "@assets/pics/events/ResumeWorkshop.jpg"
 import RishiPhoto from "@assets/pics/events/RishiEvent.jpeg"
 import AcademiaPhoto from "@assets/pics/events/AcademiaEvent.jpeg"
 import StarterPackPhoto from "@assets/pics/events/StarterPackCSEvent.jpeg"
-import AiPhoto from "@assets/pics/events/AIEvent.jpeg"
+import AiPhoto from "@assets/pics/events/AIEvent4.jpg"
 import SocialPhoto from "@assets/pics/events/SocialEvent.jpeg"
+import WomensPhoto from "@assets/pics/events/WomensEventPlaceholder.png"
+import VTHacksPhoto from "@assets/pics/events/VTHacks Stuti.jpeg"
 
 function NewsEvents() {
     const events = [
@@ -19,7 +19,7 @@ function NewsEvents() {
             description: 'Teaching how to optimize your LinkedIn profile and grow your professional presence online.'
         },
         {
-            title: 'Resume Workshop',
+            title: 'Resume Review',
             date: 'February 9th',
             imageSrc: ResumeWorkshopPhoto,
             description: 'Providing valuable resume tips and feedback before CS Source.'
@@ -39,7 +39,7 @@ function NewsEvents() {
         {
             title: 'Women in CS w/ Lockheed Martin',
             date: 'April 10th',
-            imageSrc: MicrosoftPhoto,
+            imageSrc: WomensPhoto,
             description: 'Celebrate and support women in tech with professionals from Lockheed Martin.'
         },
         {

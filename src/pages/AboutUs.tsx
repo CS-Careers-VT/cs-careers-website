@@ -15,6 +15,7 @@ import Lauren           from "@assets/pics/headshots/Lauren.jpeg";
 import Sam              from "@assets/pics/headshots/Sam.jpeg";
 import Stuti            from "@assets/pics/headshots/Stuti.jpeg";
 import Tarun            from "@assets/pics/headshots/Tarun.jpeg";
+import Pedro from "@assets/pics/headshots/Pedro.jpeg"
 
 function AboutUs() {
     return (
@@ -170,6 +171,11 @@ function AboutUs() {
                     name="Lucas Lombardi"
                     role="Co-Social Media Chair"
                     photo={Lucas}
+                    />
+                    <ExecCard
+                    name="Pedro Ribeiro"
+                    role="Event Strategist"
+                    photo={Pedro}
                     />
                 </div>
             </div>
