@@ -19,8 +19,8 @@ function Home() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <main className="flex-grow bg-csc-maroon-bg p-6 flex items-center justify-center">
-                <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <main className="flex-grow bg-csc-maroon-bg flex items-center justify-center min-h-screen">
+                <div className="container mx-auto px-10 flex flex-col md:flex-row items-center justify-between transform -translate-y-14">
                     <div className="text-left max-w-lg space-y-11">
                         <h1>
                             CS Careers at Virginia Tech
@@ -57,7 +57,7 @@ function Home() {
                 </div>
             </main>
 
-            <div className="w-full min-h-[890px] flex items-center bg-csc-organge-bg p-12">
+            <div className="w-full min-h-[850px] flex items-center bg-csc-organge-bg p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
                     {/* Left Content (Mission Statement) */}
                     <div className="bg-csc-maroon-bg text-white p-8 flex flex-col space-y-12 w-[800px] h-[320px] rounded-[50px] box-border">
@@ -82,8 +82,8 @@ function Home() {
             {/* Follow Us Section */}
             <div
                 ref={followUsRef}
-                className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-24">
-                <div className="w-full text-center mb-28">
+                className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-16 scroll-mt-24">
+                <div className="w-full text-center mb-20 mt-10">
                     <h2>
                         Follow Us
                     </h2>
