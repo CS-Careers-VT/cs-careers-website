@@ -4,7 +4,7 @@ import { handleButtonNav } from "../../button_nav.ts"
 import MainLogo from "@assets/icons/main_logo.svg"
 import EmailInput from "@components/EmailInput"
 // Assets
-import GobblerPhoto from "@assets/pics/events/gobbler_main.jpeg"
+import GobblerPhoto from "@assets/pics/events/E-BoardPhoto.jpg"
 import LinkIcon from "@assets/icons/linkedin.svg"
 import FacebookIcon from "@assets/icons/facebook.svg"
 import DiscordIcon from "@assets/icons/discord.svg"
@@ -57,25 +57,24 @@ function Home() {
                 </div>
             </main>
 
-            {/* Hero Section 2 */}
             <div className="w-full min-h-[890px] flex items-center bg-csc-organge-bg p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
                     {/* Left Content (Mission Statement) */}
-                    <div className="bg-csc-maroon-bg text-white rounded-[50px] p-8 flex flex-col space-y-6 w-[60%]">
-                        <h2>
-                            Our Vision
-                        </h2>
-                        <p>
-                            To foster a robust educational space where students interested
-                            in computer science can flourish on their journey to the job market.
+                    <div className="bg-csc-maroon-bg text-white p-8 flex flex-col space-y-12 w-[800px] h-[320px] rounded-[50px] box-border">
+                        <h2 className="text-5xl font-bold">Our Vision</h2>
+                        <p className="text-2xl leading-loose">
+                            To foster a robust educational space<br />
+                            where students interested in computer science<br />
+                            can flourish on their journey to the job market.
                         </p>
                     </div>
 
-                    <div className="self-end">
+                    {/* Image with matching height and width */}
+                    <div>
                         <img
                             src={GobblerPhoto}
                             alt="Gobblerfest Photo"
-                            className="w-[843px] h-[420px] rounded-[50px] object-cover"
+                            className="w-[800px] h-[320px] rounded-[50px] object-cover object-center transition-transform duration-300"
                         />
                     </div>
                 </div>

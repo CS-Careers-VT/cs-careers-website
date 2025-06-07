@@ -7,7 +7,7 @@ import AcademiaPhoto from "@assets/pics/events/AcademiaEvent.jpeg"
 import StarterPackPhoto from "@assets/pics/events/StarterPackCSEvent.jpeg"
 import AiPhoto from "@assets/pics/events/AIEvent4.jpg"
 import SocialPhoto from "@assets/pics/events/SocialEvent.jpeg"
-import WomensPhoto from "@assets/pics/events/WomensEventPlaceholder.png"
+import WomensPhoto from "@assets/pics/events/WomensEvent.jpg"
 import VTHacksPhoto from "@assets/pics/events/VTHacks Stuti.jpeg"
 
 function NewsEvents() {
@@ -34,13 +34,13 @@ function NewsEvents() {
             title: 'Careers in Academia',
             date: 'April 3rd',
             imageSrc: AcademiaPhoto,
-            description: 'Panel discussion on what it’s like to pursue a career in higher education.'
+            description: 'A candid panel discussion on what it’s like to pursue a career in higher education.'
         },
         {
             title: 'Women in CS w/ Lockheed Martin',
             date: 'April 10th',
             imageSrc: WomensPhoto,
-            description: 'Celebrate and support women in tech with professionals from Lockheed Martin.'
+            description: 'Celebrating and support women in tech with professionals from Lockheed Martin.'
         },
         {
             title: 'Freshman CS Starter Pack',
@@ -52,7 +52,7 @@ function NewsEvents() {
             title: 'AI Perspectives',
             date: 'April 24th',
             imageSrc: AiPhoto,
-            description: 'Exploring the evolving world of AI with industry experts across different domains.'
+            description: 'Exploring the evolving implications of AI with industry experts in healthcare, finance, automaking, and more.'
         },
         {
             title: 'CS Social',
