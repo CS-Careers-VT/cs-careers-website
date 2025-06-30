@@ -3,29 +3,38 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa"; // Impo
 
 function PhotoGallery() {
 
+    // Top of your component
+    const imageModules = import.meta.glob('../assets/pics/events/*.{jpg,jpeg,png}', {
+        eager: true,
+        as: 'url',
+    });
+
+    const importedImages = Object.values(imageModules);
+
+
     // Array of image filenames 
-    const images = [
-        "gobbler_alex.jpeg",
-        "gobbler_anton.jpeg",
-        "gobbler_main.jpeg",
-        "msft_event.png",
-        "pizza_party.png",
-        "CSSocial2.jpeg",
-        "VTHacks Misc 2.jpeg",
-        "Harjas.jpg",
-        "VTHacks Gian.jpeg",
-        "FYE.jpeg",
-        "Anton VTHacks.jpeg",
-        "Gobbler Gabe.jpg",
-        "AIEvent2.jpeg",
-        "AIEvent3.jpeg",
-        "AntonCrowd.jpeg",
-        "CSSocial3.jpeg",
-        "RishiPhoto2.jpeg",
-        "RishiPhoto3.jpeg",
-        "AIEvent3.jpeg",
-        "Academia2.jpeg"
-    ];
+    // const images = [
+    //     "gobbler_alex.jpeg",
+    //     "gobbler_anton.jpeg",
+    //     "gobbler_main.jpeg",
+    //     "msft_event.png",
+    //     "pizza_party.png",
+    //     "CSSocial2.jpeg",
+    //     "VTHacks Misc 2.jpeg",
+    //     "Harjas.jpg",
+    //     "VTHacks Gian.jpeg",
+    //     "FYE.jpeg",
+    //     "Anton VTHacks.jpeg",
+    //     "Gobbler Gabe.jpg",
+    //     "AIEvent2.jpeg",
+    //     "AIEvent3.jpeg",
+    //     "AntonCrowd.jpeg",
+    //     "CSSocial3.jpeg",
+    //     "RishiPhoto2.jpeg",
+    //     "RishiPhoto3.jpeg",
+    //     "AIEvent3.jpeg",
+    //     "Academia2.jpeg"
+    // ];
 
 
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -39,14 +48,14 @@ function PhotoGallery() {
     // Function to navigate to previous image
     const prevImage = () => {
         if (selectedIndex !== null) {
-            setSelectedIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : images.length - 1));
+            setSelectedIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : importedImages.length - 1));
         }
     };
-    
+
     // Function to navigate to next image
     const nextImage = () => {
         if (selectedIndex !== null) {
-            setSelectedIndex((prev) => (prev !== null && prev < images.length - 1 ? prev + 1 : 0));
+            setSelectedIndex((prev) => (prev !== null && prev < importedImages.length - 1 ? prev + 1 : 0));
         }
     };
 
@@ -79,10 +88,10 @@ function PhotoGallery() {
             <div className="w-[309.26px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
             {/* Image grid container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 max-w-6xl mx-auto mt-8 flex-grow">
-                {images.map((filename, index) => (
+                {importedImages.map((src, index) => (
                     <div key={index} className="w-full h-64 max-w-[400px] max-h-[400px] mx-auto">
                         <img
-                            src={`../../src/assets/pics/events/${filename}`}
+                            src={src}
                             alt={`Gallery image ${index + 1}`}
                             className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
                             onClick={() => openImage(index)}
@@ -112,7 +121,7 @@ function PhotoGallery() {
 
                     {/* Image */}
                     <img
-                        src={`../../src/assets/pics/events/${images[selectedIndex]}`}
+                        src={importedImages[selectedIndex]}
                         alt="Expanded"
                         className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-xl"
                     />
