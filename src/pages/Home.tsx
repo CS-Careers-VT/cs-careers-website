@@ -57,7 +57,7 @@ function Home() {
                 </div>
             </main>
 
-            <div className="w-full min-h-[850px] flex items-center bg-csc-organge-bg p-12">
+            <div className="w-full min-h-[850px] flex items-center bg-[#D4A074] p-12">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-x-10">
                     {/* Left Content (Mission Statement) */}
                     <div className="bg-csc-maroon-bg text-white p-8 flex flex-col space-y-12 w-[800px] h-[320px] rounded-[50px] box-border">
@@ -87,10 +87,10 @@ function Home() {
                     <h2>
                         Follow Us
                     </h2>
-                    <div className="w-[215px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
+                    <div className="w-[215px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
                 </div>
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
-                    <div className="bg-csc-organge-bg text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">
+                    <div className="bg-[#D4A074] text-white rounded-[50px] p-8 py-2 flex flex-wrap justify-between items-center w-[550px] h-[370px]">
                         {/* Instagram */}
                         <button
                             onClick={() =>
@@ -144,7 +144,7 @@ function Home() {
                         </button>
                     </div>
 
-                    <div className="bg-csc-organge-bg text-white rounded-[50px] p-8 flex flex-col justify-center items-center w-[550px] h-[370px] space-y-6">
+                    <div className="bg-[#D4A074] text-white rounded-[50px] p-8 flex flex-col justify-center items-center w-[550px] h-[370px] space-y-6">
                         <h3>
                             CS Careers Newsletter
                         </h3>

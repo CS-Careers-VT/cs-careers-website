@@ -85,7 +85,7 @@ function PhotoGallery() {
             <h2>
                 Photo Gallery
             </h2>
-            <div className="w-[309.26px] h-[11px] bg-csc-organge-bg mx-auto mt-2"></div>
+            <div className="w-[309.26px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
             {/* Image grid container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 max-w-6xl mx-auto mt-8 flex-grow">
                 {importedImages.map((src, index) => (

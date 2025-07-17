@@ -8,7 +8,7 @@ export default function ExecCard({ name, role, photo }: CardProperties) {
     return (
         <div className="relative flex-shrink-0 w-64 sm:w-72 md:w-80 aspect-[3/4]">
             {/* orange pill (behind) */}
-            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-csc-organge-bg rounded-[50px] z-0" />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[#D4A074] rounded-[50px] z-0" />
 
             {/* grey circle behind headshot */}
             <div
