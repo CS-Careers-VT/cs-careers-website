@@ -15,7 +15,7 @@ export default function EventItem({ title, date, imageSrc, description }: EventI
 
             {/* ← Node (col 2) */}
             <div className="flex justify-center items-start">
-                <div className="relative z-10 w-6 h-6 mt-2 bg-csc-organge-bg rounded-full" />
+                <div className="relative z-10 w-6 h-6 mt-2 bg-[#D4A074] rounded-full" />
             </div>
 
             {/* ← Content (col 3) */}

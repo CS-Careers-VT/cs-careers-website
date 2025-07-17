@@ -22,11 +22,11 @@
 
 @layer components {
   .orange-btn-primary {
-    @apply bg-csc-organge-bg text-[#faefef] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
+    @apply bg-[#D4A074] text-[#faefef] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
   }
 
   .orange-btn-secondary {
-    @apply border-4 border-csc-organge-bg text-[#fdfbfb] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
+    @apply border-4 border-[#D4A074] text-[#fdfbfb] text-2xl font-semibold tracking-wide py-4 px-8 rounded-full;
   }
 
   .maroon-btn-primary {
