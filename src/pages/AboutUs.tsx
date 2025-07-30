@@ -26,25 +26,25 @@ function AboutUs() {
             <div className="w-[360px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
 
             <div className="flex flex-wrap justify-center gap-6 mt-20 mb-80">
-                {/* Box 1 */}
+                {/* Box 1 - Largest CS Organization */}
+                <div className="w-80 h-60 relative rounded-[50px]">
+                    <div className="w-80 h-60 left-0 top-0 absolute bg-[#D4A074] rounded-[50px]"></div>
+                    <div className="w-60 left-[36px] top-[141px] absolute justify-start text-white text-4xl font-semibold font-['Outfit'] leading-10 tracking-widest">Largest CS Organization</div>
+                    <div className="left-[102px] top-[67px] absolute justify-start text-white text-8xl font-semibold font-['Outfit'] leading-7 tracking-[5px]">#1</div>
+                </div>
+
+                {/* Box 2 - Members */}
                 <div className="w-80 h-60 relative rounded-[50px]">
                     <div className="w-80 h-60 left-0 top-0 absolute bg-[#D4A074] rounded-[50px]"></div>
                     <div className="left-[70px] top-[160px] absolute justify-start text-white text-4xl font-semibold font-['Outfit'] leading-7 tracking-widest">Members</div>
                     <div className="left-[23px] top-[67px] absolute justify-start text-white text-8xl font-semibold font-['Outfit'] leading-7 tracking-[5px]">1200+</div>
                 </div>
 
-                {/* Box 2 */}
+                {/* Box 3 - Events */}
                 <div className="w-80 h-60 relative rounded-[50px]">
                     <div className="w-80 h-60 left-0 top-0 absolute bg-[#D4A074] rounded-[50px]"></div>
                     <div className="left-[100px] top-[160px] absolute justify-start text-white text-4xl font-semibold font-['Outfit'] leading-7 tracking-widest">Events</div>
                     <div className="w-56 h-20 left-[88px] top-[67px] absolute justify-start text-white text-8xl font-semibold font-['Outfit'] leading-7 tracking-[5px]">30+</div>
-                </div>
-
-                {/* Box 3 */}
-                <div className="w-80 h-60 relative rounded-[50px]">
-                    <div className="w-80 h-60 left-0 top-0 absolute bg-[#D4A074] rounded-[50px]"></div>
-                    <div className="w-60 left-[36px] top-[141px] absolute justify-start text-white text-4xl font-semibold font-['Outfit'] leading-10 tracking-widest">Largest CS Organization</div>
-                    <div className="left-[102px] top-[67px] absolute justify-start text-white text-8xl font-semibold font-['Outfit'] leading-7 tracking-[5px]">#1</div>
                 </div>
             </div>
 
