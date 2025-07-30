@@ -1,7 +1,7 @@
 function Footer () {
     return (
         <footer className="w-full bg-csc-maroon-bg py-6 flex justify-center items-center">
-        <p className="text-white text-xl font-medium">Sponsorship inquiries: cscareersvt@gmail.com</p>
+        <p className="text-white text-base md:text-xl font-medium">Sponsorship inquiries: cscareersvt@gmail.com</p>
         </footer>
     )
 }
