@@ -23,7 +23,7 @@ function AboutUs() {
             <div className="w-full bg-csc-maroon-bg text-center mt-20">
                 <h2>By The Numbers</h2>
             </div>
-            <div className="w-[360px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
+            <div className="hidden md:block w-[360px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
 
             <div className="flex flex-wrap justify-center gap-6 mt-20 mb-80">
                 {/* Box 1 - Largest CS Organization */}
@@ -54,7 +54,7 @@ function AboutUs() {
                     How We Serve
                 </h2>
 
-                <div className="w-4/5 md:w-[385px] h-3 bg-csc-maroon-bg"></div>
+                <div className="hidden md:block w-4/5 md:w-[385px] h-3 bg-csc-maroon-bg"></div>
                 {/* Content Section */}
                 <div className="mt-16 w-full max-w-7xl flex flex-col md:flex-row justify-between gap-10 px-4">
                     {/* Left Side: Paragraphs */}
@@ -80,7 +80,7 @@ function AboutUs() {
                 <h2 className="text-white text-5xl md:text-6xl font-semibold font-['Outfit']">
                     Meet The Executive Board!
                 </h2>
-            <div className="w-[720px] h-[11px] bg-[#D4A074] mx-auto"></div>
+            <div className="hidden md:block w-[720px] h-[11px] bg-[#D4A074] mx-auto"></div>
             </div>
 
             {/* Board of Directors */}
