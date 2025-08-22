@@ -40,7 +40,7 @@ function NewsEvents() {
             title: 'Careers in Academia',
             date: 'April 3rd',
             imageSrc: AcademiaPhoto,
-            description: 'A candid panel discussion on what it’s like to pursue a career in higher education.'
+            description: 'A candid panel discussion on what it\'s like to pursue a career in higher education.'
         },
         {
             title: 'Finding Your Career Path w/ Rishi Jaitly',
@@ -64,13 +64,11 @@ function NewsEvents() {
     
 
     return (
-        <div className="bg-csc-maroon-bg min-h-screen pt-20 pb-20">
-            {/* Header */}
-            <div className="w-full text-center">
-                <h2 className="text-white text-5xl md:text-6xl font-semibold font-['Outfit']">
-                    Spring 2025
-                </h2>
-                <div className="w-[330px] h-[11px] bg-[#D4A074] mx-auto mt-1" />
+        <div className="bg-csc-maroon-bg text-white pt-24 pb-12 px-4 min-h-screen">
+            {/* Title */}
+            <div className="text-center mb-12">
+                <h1 className="text-4xl sm:text-5xl font-bold font-['Outfit']">Spring 2025</h1>
+                <div className="w-[330px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
             </div>
 
             {/* Timeline Grid */}
@@ -93,11 +91,9 @@ function NewsEvents() {
                 </div>
             </div>
 
-            {/* Bottom Message */}
-            <div className="mt-36 text-center">
-                <h3 className="text-white text-4xl font-semibold font-['Outfit']">
-                    Fall 2025: Coming Soon!
-                </h3>
+            {/* Footer Message */}
+            <div className="mt-20 text-center">
+                <h3 className="text-3xl sm:text-4xl font-semibold font-['Outfit']">Fall 2025: Coming Soon!</h3>
             </div>
         </div>
     );
