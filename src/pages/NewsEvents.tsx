@@ -71,8 +71,21 @@ function NewsEvents() {
                 <div className="w-[330px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
             </div>
 
-            {/* Timeline Grid */}
-            <div className="relative mt-28 px-4 max-w-4xl mx-auto">
+            {/* Mobile Layout - Simple Grid */}
+            <div className="md:hidden max-w-4xl mx-auto">
+                {events.map((e, idx) => (
+                    <EventItem
+                        key={idx}
+                        title={e.title}
+                        date={e.date}
+                        imageSrc={e.imageSrc}
+                        description={e.description}
+                    />
+                ))}
+            </div>
+
+            {/* Desktop Layout - Timeline Grid */}
+            <div className="hidden md:block relative mt-28 px-4 max-w-4xl mx-auto">
                 <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
                     {/* Continuous line down column 2 */}
                     <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
