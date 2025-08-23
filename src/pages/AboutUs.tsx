@@ -21,9 +21,9 @@ function AboutUs() {
     return (
         <div>
             <div className="w-full bg-csc-maroon-bg text-center mt-20">
-                <h2>By The Numbers</h2>
+                <h2 className="text-4xl sm:text-5xl font-bold font-['Outfit']">By The Numbers</h2>
+                <div className="w-[280px] sm:w-[375px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md"></div>
             </div>
-            <div className="hidden md:block w-[360px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
 
             <div className="flex flex-wrap justify-center gap-6 mt-20 mb-80">
                 {/* Box 1 - Largest CS Organization */}
@@ -50,11 +50,10 @@ function AboutUs() {
 
             {/* Serving the Community */}
             <div className="w-full min-h-[850px] bg-[#D4A074] px-4 py-20 flex flex-col items-center">
-                <h2 className="text-white text-5xl md:text-6xl font-semibold font-['Outfit'] text-center">
+                <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Outfit'] text-center">
                     How We Serve
                 </h2>
-
-                <div className="hidden md:block w-4/5 md:w-[385px] h-3 bg-csc-maroon-bg"></div>
+                <div className="w-[250px] sm:w-[330px] h-[11px] bg-csc-maroon-bg mx-auto mt-3 rounded-md"></div>
                 {/* Content Section */}
                 <div className="mt-16 w-full max-w-7xl flex flex-col md:flex-row justify-between gap-10 px-4">
                     {/* Left Side: Paragraphs */}
@@ -77,10 +76,10 @@ function AboutUs() {
 
             {/* Meet The Executive Board */}
             <div className="w-full bg-csc-maroon-bg text-center mt-20 px-4 pt-8 pb-4">
-                <h2 className="text-white text-5xl md:text-6xl font-semibold font-['Outfit']">
+                <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Outfit']">
                     Meet The Executive Board!
                 </h2>
-            <div className="hidden md:block w-[720px] h-[11px] bg-[#D4A074] mx-auto"></div>
+                <div className="w-[320px] sm:w-[590px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md"></div>
             </div>
 
             {/* Board of Directors */}

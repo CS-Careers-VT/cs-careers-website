@@ -68,7 +68,7 @@ function NewsEvents() {
             {/* Title */}
             <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-5xl font-bold font-['Outfit']">Spring 2025</h1>
-                <div className="w-[330px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
+                <div className="w-[230px] sm:w-[300px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
             </div>
 
             {/* Mobile Layout - Simple Grid */}
