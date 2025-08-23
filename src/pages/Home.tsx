@@ -60,7 +60,7 @@ function Home() {
             <div className="w-full min-h-[850px] flex items-center bg-[#D4A074] p-4 md:p-12">
                 <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center md:items-start gap-6 md:gap-10">
                     {/* Left Content (Mission Statement) */}
-                    <div className="bg-csc-maroon-bg text-white p-6 md:p-8 flex flex-col space-y-6 md:space-y-12 w-full lg:w-[800px] h-auto lg:h-[320px] rounded-[50px] box-border">
+                    <div className="bg-csc-maroon-bg text-white p-6 md:p-8 flex flex-col space-y-6 md:space-y-12 w-full lg:w-[800px] h-auto lg:min-h-[320px] rounded-[50px] box-border">
                         <h2 className="text-3xl md:text-5xl font-bold">Our Vision</h2>
                         <p className="text-lg md:text-2xl leading-loose md:leading-[2.2]">
                             To foster a robust educational space where students interested in computer science can flourish on their journey to the job market.
@@ -72,7 +72,7 @@ function Home() {
                         <img
                             src={GobblerPhoto}
                             alt="Gobblerfest Photo"
-                            className="w-full max-w-2xl lg:w-[800px] h-auto lg:h-[320px] rounded-[50px] object-cover object-center transition-transform duration-300"
+                            className="w-full max-w-2xl lg:w-[800px] h-auto lg:min-h-[320px] rounded-[50px] object-cover object-center transition-transform duration-300"
                         />
                     </div>
                 </div>
@@ -82,10 +82,10 @@ function Home() {
                 ref={followUsRef}
                 className="w-full flex flex-col items-center bg-csc-maroon-bg py-16 pb-16 scroll-mt-24 px-4">
                 <div className="w-full text-center mb-20 mt-10">
-                    <h2>
+                    <h2 className="text-4xl sm:text-5xl font-bold font-['Outfit']">
                         Follow Us
                     </h2>
-                    <div className="w-52 md:w-[215px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
+                    <div className="w-[230px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md"></div>
                 </div>
                 <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4">
                     <div className="bg-[#D4A074] text-white rounded-[50px] p-6 px-8 py-0 flex flex-wrap content-start justify-center md:justify-between items-start w-full max-w-xl lg:w-[550px] h-auto lg:h-[370px] gap-4">

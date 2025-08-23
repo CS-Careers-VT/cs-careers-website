@@ -82,10 +82,10 @@ function PhotoGallery() {
 
     return (
         <div className="w-full bg-csc-maroon-bg text-center mt-20">
-            <h2>
+            <h2 className="text-4xl sm:text-5xl font-bold font-['Outfit']">
                 Photo Gallery
             </h2>
-            <div className="w-[309.26px] h-[11px] bg-[#D4A074] mx-auto mt-2"></div>
+            <div className="w-[240px] sm:w-[330px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md"></div>
             {/* Image grid container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 max-w-6xl mx-auto mt-8 flex-grow">
                 {importedImages.map((src, index) => (
