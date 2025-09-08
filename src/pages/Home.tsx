@@ -89,6 +89,19 @@ function Home() {
                 </div>
                 <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4">
                     <div className="bg-[#D4A074] text-white rounded-[50px] p-6 px-8 py-0 flex flex-wrap content-start justify-center md:justify-between items-start w-full max-w-xl lg:w-[550px] h-auto lg:h-[370px] gap-4">
+                        {/* Discord */}
+                        <button
+                            onClick={() =>
+                                handleButtonNav({
+                                    type: "external",
+                                    url: "https://discord.com/invite/YFTPSdcFxD?fbclid=PAZXh0bgNhZW0CMTEAAaZIa_lGREGfAHTM-u5BwjDghZFov9RqlzMxDSoN2ctGrTbKXEBpn27EElw_aem_tx7bJgjG1KQOrfClDkAi6g",
+                                })
+                            }
+                            className="transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none m-2 md:m-4"
+                        >
+                            <img src={DiscordIcon} alt="Discord" className="w-24 h-24 md:w-[160px] md:h-[161px]" />
+                        </button>
+                        
                         {/* Instagram */}
                         <button
                             onClick={() =>
@@ -126,19 +139,6 @@ function Home() {
                             className="transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none m-2 md:m-4"
                         >
                             <img src={FacebookIcon} alt="Facebook" className="w-24 h-24 md:w-[143px] md:h-[143px]" />
-                        </button>
-
-                        {/* Discord */}
-                        <button
-                            onClick={() =>
-                                handleButtonNav({
-                                    type: "external",
-                                    url: "https://discord.com/invite/YFTPSdcFxD?fbclid=PAZXh0bgNhZW0CMTEAAaZIa_lGREGfAHTM-u5BwjDghZFov9RqlzMxDSoN2ctGrTbKXEBpn27EElw_aem_tx7bJgjG1KQOrfClDkAi6g",
-                                })
-                            }
-                            className="transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none m-2 md:m-4"
-                        >
-                            <img src={DiscordIcon} alt="Discord" className="w-24 h-24 md:w-[160px] md:h-[161px]" />
                         </button>
                     </div>
 
