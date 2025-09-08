@@ -13,13 +13,16 @@ export default {
     extend: {
       colors: {
         'csc-maroon': {
-          default: '#800020'
+          DEFAULT: '#800020',
+          bg: '#861F41'
         },
-        'csc-orange': {
-          default: '#D6995D'
+        'csc-organge': {
+          DEFAULT: '#D6995D',
+          bg: '#d6995d'
         },
         'csc-yellow': {
-          default: '#ECD68F'
+          DEFAULT: '#ECD68F',
+          light: '#F5E9B8'
         }
       }
     },
