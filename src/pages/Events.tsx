@@ -1,4 +1,4 @@
-// NewsEvents.tsx
+// Events.tsx
 
 import EventItem from '@components/EventItem';
 import ResumeWorkshopPhoto from "@assets/pics/events/ResumeWorkshop.jpg"
@@ -9,16 +9,23 @@ import AiPhoto from "@assets/pics/events/AIEvent4.jpg"
 import SocialPhoto from "@assets/pics/events/SocialEvent.jpeg"
 import WomensPhoto from "@assets/pics/events/WomensEvent.jpg"
 import VTHacksPhoto from "@assets/pics/events/VTHacks Stuti.jpeg"
-import Gobbler25 from "@assets/pics/events/gobbler_25.png"
+import Gobbler25 from "@assets/pics/events/gobblerfest_exec_25.png"
 import Dress2Impress from "@assets/pics/events/dress2impress.png"
+import CapTechPhoto from "@assets/pics/events/CapTechMixer.jpg"
 
-function NewsEvents() {
+function Events() {
     const events = [
         {
-            title: 'Dress to Impress Career Fair Prep Workshop',
+            title: 'CapTech Mixer',
+            date: 'September 8th, 2025',
+            imageSrc: CapTechPhoto,
+            description: 'Learning more about CapTech\'s culture, opportunities, and exciting projects from their profesionals, including VT alumni.'
+        },
+        {
+            title: 'Dress to Impress',
             date: 'September 3rd, 2025',
             imageSrc: Dress2Impress,
-            description: 'Headshot, Resume, and Elevator Pitch workshop designed to connect students with career center professionals in preparation for Virginia Tech\'s Career Fairs'
+            description: 'Headshot, resume, and elevator pitch workshop designed to connect students with career center professionals in preparation for Virginia Tech\'s career fairs.'
         },
         {
             title: 'Gobblerfest',
@@ -48,7 +55,7 @@ function NewsEvents() {
             title: 'Women in CS w/ Lockheed Martin',
             date: 'April 10th, 2025',
             imageSrc: WomensPhoto,
-            description: 'Celebrating and support women in tech with professionals from Lockheed Martin.'
+            description: 'Celebrating and supporting women in tech with professionals from Lockheed Martin.'
         },
         {
             title: 'Careers in Academia',
@@ -82,7 +89,7 @@ function NewsEvents() {
             {/* Title */}
             <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-5xl font-bold font-['Outfit']">Our Events</h1> {/* TODO: change back to SPRING 2025 */}
-                <div className="w-[230px] sm:w-[300px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
+                <div className="w-[230px] sm:w-[260px] h-[11px] bg-csc-organge-bg mx-auto mt-3 rounded-md" />
             </div>
 
             {/* Mobile Layout - Simple Grid */}
@@ -103,7 +110,7 @@ function NewsEvents() {
                 <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
                     {/* Continuous line down column 2 */}
                     <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
-                        <div className="w-px h-[90.6%] bg-white" />
+                        <div className="w-px h-[92.7%] bg-white" />
                     </div>
 
                     {events.map((e, idx) => (
@@ -127,4 +134,4 @@ function NewsEvents() {
     );
 }
 
-export default NewsEvents;
+export default Events;
