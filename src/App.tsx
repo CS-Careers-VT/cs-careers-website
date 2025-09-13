@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Home, AboutUs, NewsEvents, PhotoGallery, Sponsorships } from "@pages";
+import { Home, AboutUs, Events, PhotoGallery, Sponsorships } from "@pages";
 import Navbar from '@components/common/Navbar';
 import Footer from '@components/common/Footer';
 
@@ -26,7 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path='/news-events' element={<NewsEvents />} />
+            <Route path='/events' element={<Events />} />
             <Route path='/photo-gallery' element={<PhotoGallery />} />
             <Route path='/sponsorships' element={<Sponsorships />} />
           </Routes>
