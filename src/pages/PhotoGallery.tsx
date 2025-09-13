@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa"; // Impo
 function PhotoGallery() {
 
     // Top of your component
-    const imageModules = import.meta.glob('../assets/pics/events/*.{jpg,jpeg,png}', {
+    const imageModules = import.meta.glob('../assets/pics/events/*.{jpg,jpeg,png,JPG}', {
         eager: true,
         as: 'url',
     });

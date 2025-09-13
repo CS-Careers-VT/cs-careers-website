@@ -27,7 +27,7 @@ Listed below are the many resources that power the CS Careers landing site. Cont
 | --- | --- | --- |
 | [Development Firebase](https://console.firebase.google.com/project/dev-cs-careers-vt-website/overview?fb_gclid=CjwKCAiAkc28BhB0EiwAM001TT5YOGLgGPuM5hFJRd8ziEEajO2K2tf6MxXbjWenvYINP-6-jCkDpxoCiUkQAvD_BwE) | Web console for managing the development site's backend  | cscareersvt gmail account |
 | [Production Firebase](https://console.firebase.google.com/project/prod-cs-careers-vt-website/overview?fb_gclid=CjwKCAiAkc28BhB0EiwAM001TT5YOGLgGPuM5hFJRd8ziEEajO2K2tf6MxXbjWenvYINP-6-jCkDpxoCiUkQAvD_BwE) | Web console for managing the production site's backend  | cscareersvt gmail account |
-| [Figma](https://www.figma.com/design/eNIFjbsJ5QoUBIaP9ePEsa/CS-Careers-Site-Mockup?node-id=214-2&t=2miC2PigupI2uj74-0&fuid=1428424133471390528) | Wireframing and prototyping the website. | Aaron Boateng (bxatend@vt.edu)|
+| [Figma](https://www.figma.com/design/eNIFjbsJ5QoUBIaP9ePEsa/CS-Careers-Site-Mockup?node-id=214-2&t=2miC2PigupI2uj74-0&fuid=1428424133471390528) | Wireframing and prototyping the website. | Aaron Boateng (bxateng@vt.edu)|
 | [Github Repo](https://github.com/CS-Careers-VT/cs-careers-website) | Repository for the website's source code and CI/CD pipeline | Blake Marterella (blake@martella.com) |
 
 ## Developers

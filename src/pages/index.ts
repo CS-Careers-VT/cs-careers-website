@@ -1,5 +1,5 @@
 export {default as Home} from "./Home"
 export {default as AboutUs} from "./AboutUs"
-export {default as NewsEvents} from "./NewsEvents"
+export {default as Events} from "./Events"
 export {default as PhotoGallery} from "./PhotoGallery"
 export {default as Sponsorships} from "./Sponsorships"

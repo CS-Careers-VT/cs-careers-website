@@ -31,7 +31,7 @@ function Navbar() {
             <Link to="/about-us" className="hover:text-gray-300 transition">About Us</Link>
           </li>
           <li>
-            <Link to="/news-events" className="hover:text-gray-300 transition">News & Events</Link>
+            <Link to="/events" className="hover:text-gray-300 transition">Events</Link>
           </li>
           <li>
             <Link to="/photo-gallery" className="hover:text-gray-300 transition">Photo Gallery</Link>
@@ -52,7 +52,7 @@ function Navbar() {
         <ul className="flex flex-col items-center space-y-4 mt-4 md:hidden text-neutral-50 text-xl font-semibold tracking-wider bg-csc-maroon-bg">
           <li><Link to="/" onClick={closeMenu} className="hover:text-gray-300 transition">Home</Link></li>
           <li><Link to="/about-us" onClick={closeMenu} className="hover:text-gray-300 transition">About Us</Link></li>
-          <li><Link to="/news-events" onClick={closeMenu} className="hover:text-gray-300 transition">News & Events</Link></li>
+          <li><Link to="/events" onClick={closeMenu} className="hover:text-gray-300 transition">Events</Link></li>
           <li><Link to="/photo-gallery" onClick={closeMenu} className="hover:text-gray-300 transition">Photo Gallery</Link></li>
         </ul>
       )}
