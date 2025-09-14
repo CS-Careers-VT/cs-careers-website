@@ -110,7 +110,7 @@ function Events() {
                 <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
                     {/* Continuous line down column 2 */}
                     <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
-                        <div className="w-px h-[92.7%] bg-white" />
+                        <div className="w-px h-[93.5%] bg-white" />
                     </div>
 
                     {events.map((e, idx) => (
