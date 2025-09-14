@@ -1,30 +1,43 @@
+// EmailInput.tsx
 import { useState } from "react";
 
 function EmailInput() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState(""); // Will store success or error messages
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setMessage("");
 
     try {
-      const res = await fetch("https://corsproxy.io/?https://api.beehiiv.com/v2/forms/477cd612-259a-4a0d-b1d6-e4f8ac16e43a/subscribe", {
+      const res = await fetch("http://localhost:3001/api/sub", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        data = { error: "Server did not return valid JSON" };
+      }
+
+
       if (res.ok) {
         setStatus("success");
+        setMessage(data?.message || "Subscribed successfully!");
         setEmail("");
       } else {
         setStatus("error");
+        setMessage(data?.error || "Something went wrong. Please try again.");
       }
-    } catch {
+    } catch (err) {
+      console.error("Subscription error:", err);
       setStatus("error");
+      setMessage("Something went wrong. Please try again.");
     }
   };
 
@@ -50,8 +63,12 @@ function EmailInput() {
         {status === "success" ? "✓ Subscribed" : "Subscribe"}
       </button>
 
-      {status === "error" && (
-        <p className="mt-2 text-red-700">Something went wrong. Please try again.</p>
+      {message && (
+        <p
+          className={`mt-2 ${status === "error" ? "text-red-700" : "text-green-600"}`}
+        >
+          {message}
+        </p>
       )}
     </form>
   );
