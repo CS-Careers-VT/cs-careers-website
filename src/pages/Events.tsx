@@ -12,9 +12,16 @@ import VTHacksPhoto from "@assets/pics/events/VTHacks Stuti.jpeg"
 import Gobbler25 from "@assets/pics/events/gobblerfest_exec_25.png"
 import Dress2Impress from "@assets/pics/events/dress2impress.png"
 import CapTechPhoto from "@assets/pics/events/CapTechMixer.jpg"
+import VisualizePhoto from "@assets/pics/events/visual.jpeg"
 
 function Events() {
     const events = [
+        {
+            title: 'Visualize Your Semester',
+            date: 'September 16th, 2025',
+            imageSrc: VisualizePhoto,
+            description: "Encouraging a creative and ambitious goal-setting environment to help students conquer the semester."
+        },
         {
             title: 'CapTech Mixer',
             date: 'September 8th, 2025',

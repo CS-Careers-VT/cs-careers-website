@@ -1,10 +1,10 @@
-// EmailInput.tsx
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function EmailInput() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState(""); // Will store success or error messages
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,30 +12,41 @@ function EmailInput() {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:3001/api/sub", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      console.log("Submitting email:", email);
 
-      let data;
+      // 1️⃣ Save to Google Sheets via Apps Script
       try {
-        data = await res.json();
-      } catch {
-        data = { error: "Server did not return valid JSON" };
+        const res = await fetch("https://script.google.com/macros/s/AKfycbxjpNusVl1T1uEUheuQWp2QOZ40klIQCHXt2Royh5qxDzwfwkIBxGX-OtGDlBqL7ZJx/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ email }).toString(),
+        });
+
+        console.log("Google Sheets response status:", res.status);
+        const data = await res.json();
+        console.log("Google Sheets response data:", data);
+      } catch (err) {
+        console.error("Error sending to Google Sheets:", err);
       }
 
-
-      if (res.ok) {
-        setStatus("success");
-        setMessage(data?.message || "Subscribed successfully!");
-        setEmail("");
-      } else {
-        setStatus("error");
-        setMessage(data?.error || "Something went wrong. Please try again.");
+      // 2️⃣ Send email via EmailJS
+      try {
+        const emailRes = await emailjs.send(
+          "service_secbokp",   // EmailJS Service ID
+          "template_p8mlilu",  // EmailJS Template ID
+          { email },           // matches {{email}} in template
+          "b6Mx95U8Eag9iU2Pk"    // EmailJS Public Key
+        );
+        console.log("EmailJS response:", emailRes);
+      } catch (err) {
+        console.error("Error sending EmailJS:", err);
       }
+
+      setStatus("success");
+      setEmail("");
+      console.log("Subscription flow completed.");
     } catch (err) {
-      console.error("Subscription error:", err);
+      console.error("Unexpected error during subscription:", err);
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
     }
@@ -64,9 +75,7 @@ function EmailInput() {
       </button>
 
       {message && (
-        <p
-          className={`mt-2 ${status === "error" ? "text-red-700" : "text-green-600"}`}
-        >
+        <p className={`mt-2 ${status === "error" ? "text-red-700" : "text-green-600"}`}>
           {message}
         </p>
       )}
