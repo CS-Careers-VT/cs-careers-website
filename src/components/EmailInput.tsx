@@ -1,30 +1,54 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function EmailInput() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setMessage("");
 
     try {
-      const res = await fetch("https://corsproxy.io/?https://api.beehiiv.com/v2/forms/477cd612-259a-4a0d-b1d6-e4f8ac16e43a/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      console.log("Submitting email:", email);
 
-      if (res.ok) {
-        setStatus("success");
-        setEmail("");
-      } else {
-        setStatus("error");
+      // 1️⃣ Save to Google Sheets via Apps Script
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbxjpNusVl1T1uEUheuQWp2QOZ40klIQCHXt2Royh5qxDzwfwkIBxGX-OtGDlBqL7ZJx/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ email }).toString(),
+        });
+
+        console.log("Google Sheets response status:", res.status);
+        const data = await res.json();
+        console.log("Google Sheets response data:", data);
+      } catch (err) {
+        console.error("Error sending to Google Sheets:", err);
       }
-    } catch {
+
+      // 2️⃣ Send email via EmailJS
+      try {
+        const emailRes = await emailjs.send(
+          "service_secbokp",   // EmailJS Service ID
+          "template_p8mlilu",  // EmailJS Template ID
+          { email },           // matches {{email}} in template
+          "b6Mx95U8Eag9iU2Pk"    // EmailJS Public Key
+        );
+        console.log("EmailJS response:", emailRes);
+      } catch (err) {
+        console.error("Error sending EmailJS:", err);
+      }
+
+      setStatus("success");
+      setEmail("");
+      console.log("Subscription flow completed.");
+    } catch (err) {
+      console.error("Unexpected error during subscription:", err);
       setStatus("error");
+      setMessage("Something went wrong. Please try again.");
     }
   };
 
@@ -50,8 +74,10 @@ function EmailInput() {
         {status === "success" ? "✓ Subscribed" : "Subscribe"}
       </button>
 
-      {status === "error" && (
-        <p className="mt-2 text-red-700">Something went wrong. Please try again.</p>
+      {message && (
+        <p className={`mt-2 ${status === "error" ? "text-red-700" : "text-green-600"}`}>
+          {message}
+        </p>
       )}
     </form>
   );
