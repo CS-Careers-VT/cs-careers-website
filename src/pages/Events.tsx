@@ -13,9 +13,16 @@ import Gobbler25 from "@assets/pics/events/gobblerfest_exec_25.png"
 import Dress2Impress from "@assets/pics/events/dress2impress.png"
 import CapTechPhoto from "@assets/pics/events/CapTechMixer.jpg"
 import VisualizePhoto from "@assets/pics/events/visual.jpeg"
+import FinTechEvent from "@assets/pics/events/AlumInsights.jpeg"
 
 function Events() {
     const events = [
+        {
+            title: 'Alumni Insights Mixer w/ FinTech Club',
+            date: 'September 23rd, 2025',
+            imageSrc: FinTechEvent,
+            description: 'Learning more about opportunities in the fintech industry from VT alumni.'
+        },
         {
             title: 'Visualize Your Semester',
             date: 'September 16th, 2025',
@@ -117,7 +124,7 @@ function Events() {
                 <div className="relative grid grid-cols-[auto_1.5rem_minmax(0,1fr)] gap-y-48 gap-x-24 z-10 items-start">
                     {/* Continuous line down column 2 */}
                     <div className="absolute inset-y-5 left-3 col-start-2 flex justify-center">
-                        <div className="w-px h-[93.4%] bg-white" />
+                        <div className="w-px h-[94.6%] bg-white" />
                     </div>
 
                     {events.map((e, idx) => (
