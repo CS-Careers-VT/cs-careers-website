@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery · CS Careers at Virginia Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html" class="is-active">Photo Gallery</a></li>
+          <li><a href="coffee-chat-concepts.html">Coffee Chats</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="#" class="btn btn--primary btn--sm">Get Involved</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-head">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Photo Gallery</span>
+      <h1 class="page-title">Memories from <span class="grad">our community.</span></h1>
+      <p class="page-sub">
+        Every event, every team night, every too-late study session —
+        a scrapbook of what 500+ people look like when they show up for each other.
+      </p>
+    </section>
+
+    <!-- FILTER CHIPS -->
+    <section class="gallery-filters">
+      <button class="gallery-chip is-active" type="button">All</button>
+      <button class="gallery-chip" type="button">Company Nights</button>
+      <button class="gallery-chip" type="button">Workshops</button>
+      <button class="gallery-chip" type="button">Socials</button>
+      <button class="gallery-chip" type="button">Hackathons</button>
+      <button class="gallery-chip" type="button">Board</button>
+    </section>
+
+    <!-- GRID -->
+    <section class="gallery-section">
+      <div class="gallery-grid">
+        <figure class="gallery-tile gallery-tile--lg">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Company Nights</span>
+            <span class="gallery-tile__title">Meta Fireside Chat</span>
+            <span class="gallery-tile__date">Mar 2026</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Workshops</span>
+            <span class="gallery-tile__title">Résumé Clinic</span>
+            <span class="gallery-tile__date">Feb 2026</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Socials</span>
+            <span class="gallery-tile__title">Spring Mixer</span>
+            <span class="gallery-tile__date">Feb 2026</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Hackathons</span>
+            <span class="gallery-tile__title">HackVT Team</span>
+            <span class="gallery-tile__date">Jan 2026</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-tile--tall">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Board</span>
+            <span class="gallery-tile__title">2026 E-Board Shoot</span>
+            <span class="gallery-tile__date">Jan 2026</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Company Nights</span>
+            <span class="gallery-tile__title">Capital One Panel</span>
+            <span class="gallery-tile__date">Nov 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Socials</span>
+            <span class="gallery-tile__title">Fall Cookout</span>
+            <span class="gallery-tile__date">Oct 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-tile--lg">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Hackathons</span>
+            <span class="gallery-tile__title">HooHacks Squad</span>
+            <span class="gallery-tile__date">Oct 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Workshops</span>
+            <span class="gallery-tile__title">Mock Interview Night</span>
+            <span class="gallery-tile__date">Sep 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Socials</span>
+            <span class="gallery-tile__title">Welcome Week</span>
+            <span class="gallery-tile__date">Aug 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Company Nights</span>
+            <span class="gallery-tile__title">Bloomberg Night</span>
+            <span class="gallery-tile__date">Apr 2025</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-tile">
+          <div class="gallery-tile__placeholder" aria-hidden="true"></div>
+          <figcaption>
+            <span class="gallery-tile__tag">Board</span>
+            <span class="gallery-tile__title">Retreat Weekend</span>
+            <span class="gallery-tile__date">Mar 2025</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="page-cta">
+      <div class="page-cta__card">
+        <h2>Got a photo we missed?</h2>
+        <p>Drop it in our Discord — we'll add it to the next drop.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#">Join the Discord <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="events.html">See Upcoming Events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <p class="footer-contact">
+        Business inquiries: <a href="mailto:cscareersvt@gmail.com">cscareersvt@gmail.com</a>
+      </p>
+      <p class="footer-meta">© 2026 CS Careers at Virginia Tech</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

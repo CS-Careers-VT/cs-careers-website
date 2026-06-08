@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us · CS Careers at Virginia Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="is-active">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="coffee-chat-concepts.html">Coffee Chats</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="#" class="btn btn--primary btn--sm">Get Involved</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER + PILLARS (two-col) -->
+    <section class="intro-pillars">
+      <div class="intro-pillars__left">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>About CS Careers</span>
+        <h1 class="page-title">Built by students, <span class="grad">for students.</span></h1>
+        <p class="page-sub">
+          We're the largest student-led tech community at Virginia Tech.
+          No recruiters. No fluff. Just people who've been where you are,
+          helping you get where you want to go.
+        </p>
+        <div class="intro-pillars__img slideshow">
+          <div class="slideshow__track">
+            <img src="assets/aboutUsPage/headerPhotos/headerPic.jpg" alt="CS Careers team" />
+            <img src="assets/aboutUsPage/headerPhotos/header2.jpg" alt="CS Careers members" />
+            <img src="assets/aboutUsPage/headerPhotos/header3.jpg" alt="CS Careers event" />
+            <img src="assets/aboutUsPage/headerPhotos/header4.jpg" alt="CS Careers community" />
+          </div>
+        </div>
+      </div>
+      <div class="intro-pillars__right">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>What We Do</span>
+        <h2 class="pillars__heading">Three pillars, one community.</h2>
+        <div class="pillars__stack">
+          <article class="pillar">
+            <div class="pillar__num">01</div>
+            <h3>Mentorship</h3>
+            <p>Upperclassmen and alumni paired with underclassmen. Office hours, résumé reviews, real talk.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__num">02</div>
+            <h3>Industry Access</h3>
+            <p>Monthly company nights, tech talks, and direct intro lines to recruiters at 12+ partner companies.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__num">03</div>
+            <h3>Build Together</h3>
+            <p>Project sprints, hackathon teams, and study groups — because the fastest way to learn is to ship.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team">
+      <div class="team__head">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>The Board</span>
+        <h2>Meet the people running it.</h2>
+      </div>
+
+      <div class="team-tabs" role="tablist" aria-label="Board generation">
+        <button class="team-tab is-active" role="tab" aria-selected="true" data-gen="current">Current</button>
+        <button class="team-tab" role="tab" aria-selected="false" data-gen="2025">2025</button>
+        <button class="team-tab" role="tab" aria-selected="false" data-gen="2024">2024</button>
+      </div>
+
+      <!-- ── Current generation (2026 board — names TBD) ── -->
+      <div class="team-gen is-active" id="gen-current">
+        <div class="team-tier">
+          <div class="team-tier__label">President</div>
+          <div class="team-tier__row team-tier__row--1">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Gianfranco Vivanco</h4><p>President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Vice Presidents</div>
+          <div class="team-tier__row team-tier__row--2">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Reet Kaler</h4><p>Co-Vice President</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Amy Weston</h4><p>Co-Vice President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Directors</div>
+          <div class="team-tier__row team-tier__row--4">
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Joanne.png" alt="Joanne Wang" /></div><h4>Joanne Wang</h4><p>Operations Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Aadil.JPG" alt="Aadil" /></div><h4>Aadil</h4><p>Finance Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Charlotte.JPEG" alt="Charlotte" /></div><h4>Charlotte</h4><p>Co-Marketing Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Marvi.jpg" alt="Marvi" /></div><h4>Marvi</h4><p>Co-Marketing Director</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Board</div>
+          <div class="team-tier__row">
+            <article class="team-card"><div class="team-card__photo"></div><p>Opportunities Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Nina Yang</h4><p>Webmaster</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Ishita.JPG" alt="Ishita" /></div><h4>Ishita</h4><p>Outreach Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><p>Fundraising Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><p>Graphic Designer</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><p>Co-Social Media Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/2026_Members/Man.jpeg" alt="Man" /></div><h4>Man</h4><p>Co-Social Media Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><p>Event Strategist</p></article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2025 generation (Lauren's board) ── -->
+      <div class="team-gen" id="gen-2025">
+        <div class="team-tier">
+          <div class="team-tier__label">President</div>
+          <div class="team-tier__row team-tier__row--1">
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Lauren.jpeg" alt="Lauren Ruiz-Arenas" /></div><h4>Lauren Ruiz-Arenas</h4><p>President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Vice Presidents</div>
+          <div class="team-tier__row team-tier__row--2">
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Gianfranco.jpg" alt="Gianfranco Vivanco" /></div><h4>Gianfranco Vivanco</h4><p>Co-Vice President</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Alex.jpeg" alt="Alex Brown" /></div><h4>Alex Brown</h4><p>Co-Vice President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Directors</div>
+          <div class="team-tier__row team-tier__row--4">
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Tarun.jpeg" alt="Tarun Nandamudi" /></div><h4>Tarun Nandamudi</h4><p>Operations Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Stuti.jpeg" alt="Stuti Shah" /></div><h4>Stuti Shah</h4><p>Finance Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Sam.jpeg" alt="Sam Jarvis" /></div><h4>Sam Jarvis</h4><p>Co-Marketing Director</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Alexa.jpeg" alt="Alexa Thompson" /></div><h4>Alexa Thompson</h4><p>Co-Marketing Director</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Board</div>
+          <div class="team-tier__row">
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Gabe.jpeg" alt="Gabriel Palomino" /></div><h4>Gabriel Palomino</h4><p>Opportunities Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Aaron.jpeg" alt="Aaron Boateng" /></div><h4>Aaron Boateng</h4><p>Webmaster</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Nina.jpeg" alt="Nina Yang" /></div><h4>Nina Yang</h4><p>Outreach Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Amy.jpeg" alt="Amy Weston" /></div><h4>Amy Weston</h4><p>Fundraising Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Reet.jpeg" alt="Reet Kaler" /></div><h4>Reet Kaler</h4><p>Graphic Designer</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Harita.jpeg" alt="Harita Kondragunta" /></div><h4>Harita Kondragunta</h4><p>Co-Social Media Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Lucas.jpeg" alt="Lucas Lombardi" /></div><h4>Lucas Lombardi</h4><p>Co-Social Media Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"><img src="assets/aboutUsPage/headshots/Pedro.jpeg" alt="Pedro Ribeiro" /></div><h4>Pedro Ribeiro</h4><p>Event Strategist</p></article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2024 generation (founding board) ── -->
+      <div class="team-gen" id="gen-2024">
+        <div class="team-tier">
+          <div class="team-tier__label">President</div>
+          <div class="team-tier__row team-tier__row--1">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Anton Bilonog</h4><p>President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Vice Presidents</div>
+          <div class="team-tier__row team-tier__row--2">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Gio Romero-Ruiz</h4><p>Vice President</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Blake Marterella</h4><p>Vice President</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Directors</div>
+          <div class="team-tier__row team-tier__row--3">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Gabriel Holder</h4><p>Director of Logistics</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Alex Brown</h4><p>Director of Finance</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Bivash Oli</h4><p>Director of Marketing</p></article>
+          </div>
+        </div>
+        <div class="team-tier">
+          <div class="team-tier__label">Board</div>
+          <div class="team-tier__row">
+            <article class="team-card"><div class="team-card__photo"></div><h4>Tarun Nandamudi</h4><p>Event Strategist</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Aaron Boateng</h4><p>Historian</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Gabriel Palomino</h4><p>Ambassador Coordinator</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Stuti Shah</h4><p>Fundraising Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Sam Jarvis</h4><p>Graphic Designer</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Lauren Ruiz</h4><p>Social Media Chair</p></article>
+            <article class="team-card"><div class="team-card__photo"></div><h4>Gianfranco Vivanco</h4><p>First-Year Experience</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COFFEE CHAT CTA -->
+    <section class="coffee-cta">
+      <div class="coffee-cta__card">
+        <div class="coffee-cta__border" aria-hidden="true"></div>
+        <div class="coffee-cta__body">
+          <div class="coffee-cta__icon">☕</div>
+          <div class="coffee-cta__text">
+            <h2>Want to meet one of us?</h2>
+            <p>Just fill out a quick form — we'll match you with a board member and reach out within 48 hours. Open to all Virginia Tech students, any topic.</p>
+          </div>
+          <div class="coffee-cta__action">
+            <div class="coffee-cta__btn-wrap">
+              <div class="coffee-cta__pulse-ring" aria-hidden="true"></div>
+              <a href="#" class="btn btn--primary">Request a Chat →</a>
+            </div>
+            <small>Free · 30 min · Any topic</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <p class="footer-contact">
+        Business inquiries: <a href="mailto:cscareersvt@gmail.com">cscareersvt@gmail.com</a>
+      </p>
+      <p class="footer-meta">© 2026 CS Careers at Virginia Tech</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

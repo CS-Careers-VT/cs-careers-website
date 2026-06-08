@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Chats · CS Careers at Virginia Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0A0614;
+      --surface:  rgba(22, 10, 36, 0.6);
+      --border:   rgba(255,255,255,0.07);
+      --maroon:   #7B1535;
+      --magenta:  #C41E5A;
+      --purple:   #6B3FA0;
+      --cyan:     #3DCCB6;
+      --text:     #F0EBF8;
+      --text-soft:#C4B8D8;
+      --text-mute:#8A7EA0;
+      --radius:   16px;
+      --radius-lg:24px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      padding: 60px 24px 100px;
+    }
+
+    /* page label */
+    .concepts-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .concepts-header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .concepts-header p {
+      font-size: 14px;
+      color: var(--text-mute);
+    }
+
+    /* concept wrapper */
+    .concept {
+      max-width: 1000px;
+      margin: 0 auto 100px;
+    }
+    .concept-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 20px;
+    }
+    .concept-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    .concept-label .tag {
+      background: rgba(61,204,182,0.12);
+      border: 1px solid rgba(61,204,182,0.25);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 10px;
+      color: var(--cyan);
+    }
+
+    /* shared button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn--primary {
+      background: linear-gradient(120deg, var(--maroon), var(--magenta));
+      color: #fff;
+    }
+    .btn--ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--text-soft);
+    }
+    .btn--warm {
+      background: linear-gradient(120deg, #7B3F00, #C97000);
+      color: #fff;
+    }
+
+    /* eyebrow */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+    .eyebrow__dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* divider */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin: 0 auto 100px;
+      max-width: 1000px;
+    }
+
+    /* photo placeholder */
+    .photo-placeholder {
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(61,204,182,0.2), transparent 60%),
+        radial-gradient(circle at 75% 70%, rgba(168,48,90,0.25), transparent 55%),
+        #160A24;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-mute);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+
+    /* =====================================================
+       CONCEPT 1 — Your idea: text left · image right · button under image
+       ===================================================== */
+    .c1-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+    }
+    .c1-text {
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .c1-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .c1-text h2 span {
+      background: linear-gradient(120deg, var(--cyan), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .c1-text p {
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 380px;
+    }
+    .c1-text ul {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .c1-text ul li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+    .c1-text ul li::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(61,204,182,0.12);
+      border: 1px solid rgba(61,204,182,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--cyan);
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 20px;
+    }
+    .c1-visual {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .c1-visual .photo-placeholder {
+      flex: 1;
+      border-radius: 0;
+      border: none;
+      border-left: 1px solid var(--border);
+      min-height: 320px;
+    }
+    .c1-visual .photo-placeholder span {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+    .c1-visual .photo-placeholder p {
+      font-size: 12px;
+    }
+    .c1-btn-area {
+      padding: 20px 28px;
+      background: rgba(10,6,20,0.4);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .c1-btn-area small {
+      font-size: 12px;
+      color: var(--text-mute);
+      line-height: 1.5;
+    }
+
+    /* =====================================================
+       CONCEPT 2 — Full-width warm centered section
+       ===================================================== */
+    .c2-section {
+      border-radius: var(--radius-lg);
+      padding: 72px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .c2-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(123,21,53,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(107,63,160,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .c2-icon {
+      font-size: 52px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .c2-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .c2-section h2 span {
+      background: linear-gradient(120deg, var(--cyan) 0%, var(--magenta) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .c2-section > p {
+      font-size: 16px;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+      position: relative;
+    }
+    .c2-chips {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .c2-chip {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+    .c2-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* =====================================================
+       CONCEPT 3 — Compact inline card (after team section)
+       ===================================================== */
+    .c3-card {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 32px 40px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    .c3-icon-wrap {
+      width: 72px; height: 72px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(123,21,53,0.4), rgba(107,63,160,0.3));
+      border: 1px solid rgba(196,30,90,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .c3-text { flex: 1; }
+    .c3-text h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .c3-text p {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+    .c3-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .c3-right small {
+      font-size: 11.5px;
+      color: var(--text-mute);
+    }
+
+    /* =====================================================
+       CONCEPT 4 — Sticky floating pill (simulated)
+       ===================================================== */
+    .c4-demo {
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      position: relative;
+      min-height: 280px;
+    }
+    .c4-demo-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(255,255,255,0.025) 39px,
+          rgba(255,255,255,0.025) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 39px,
+          rgba(255,255,255,0.025) 39px,
+          rgba(255,255,255,0.025) 40px
+        );
+      pointer-events: none;
+    }
+    .c4-page-content {
+      position: relative;
+      z-index: 1;
+    }
+    .c4-page-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      opacity: 0.35;
+    }
+    .c4-page-content p {
+      font-size: 14px;
+      color: var(--text-mute);
+      line-height: 1.6;
+      max-width: 500px;
+      opacity: 0.35;
+    }
+    .c4-pill-container {
+      position: absolute;
+      bottom: 28px;
+      right: 32px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .c4-label {
+      font-size: 11px;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .c4-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--maroon), var(--magenta));
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(196,30,90,0.4);
+      cursor: pointer;
+    }
+    .c4-pill-ring {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: 2px solid rgba(196,30,90,0.3);
+      animation: pulse 2.5s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      100% { transform: scale(2.2); opacity: 0;   }
+    }
+    .c4-note {
+      margin-top: 24px;
+      padding: 14px 20px;
+      background: rgba(61,204,182,0.06);
+      border: 1px solid rgba(61,204,182,0.15);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--text-mute);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="coffee-chat-concepts.html" class="is-active">Coffee Chats</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="btn btn--ghost btn--sm">Log in</a>
+        <a href="#" class="btn btn--primary btn--sm">Get Involved</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+  <div class="concepts-header">
+    <h1>Coffee Chats · Design Concepts</h1>
+    <p>4 layout options — screenshot to share with the team. Nothing is live yet.</p>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────────────
+       CONCEPT 1  ·  YOUR IDEA: text left · image right · button under image
+  ────────────────────────────────────────────────────────── -->
+  <div class="concept">
+    <div class="concept-label">
+      <span class="dot"></span>
+      Option 1 &nbsp;·&nbsp; Text left · Image right · Button under image
+      <span class="tag">Your idea</span>
+    </div>
+    <div class="c1-card">
+      <div class="c1-text">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Coffee Chats</span>
+        <h2>Let's grab a<br /><span>coffee</span> together.</h2>
+        <p>
+          Have questions about recruiting, résumés, internships, or just
+          want to talk to someone who's been there? Our board members are
+          happy to chat — no agenda required.
+        </p>
+        <ul>
+          <li>30-minute casual conversations</li>
+          <li>Any topic — career, classes, or life</li>
+          <li>Open to all Virginia Tech students</li>
+        </ul>
+      </div>
+      <div class="c1-visual">
+        <div class="photo-placeholder">
+          <div style="text-align:center">
+            <span>☕</span>
+            <p>Team photo or coffee image</p>
+          </div>
+        </div>
+        <div class="c1-btn-area">
+          <small>Takes ~2 min · We'll reach out within 48 hrs</small>
+          <a href="#" class="btn btn--primary">Request a Chat →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       CONCEPT 2  ·  Full-width warm centered section
+  ────────────────────────────────────────────────────────── -->
+  <div class="concept">
+    <div class="concept-label">
+      <span class="dot"></span>
+      Option 2 &nbsp;·&nbsp; Full-width centered section with ambient glow
+    </div>
+    <div class="c2-section">
+      <span class="c2-icon">☕</span>
+      <h2>Want to talk to <span>a real person?</span></h2>
+      <p>
+        Our board members set aside time every week for coffee chats.
+        Whether you're a freshman figuring out where to start or a senior
+        prepping for final rounds — we've got 30 minutes for you.
+      </p>
+      <div class="c2-chips">
+        <span class="c2-chip">☑ Career advice</span>
+        <span class="c2-chip">☑ Resume review</span>
+        <span class="c2-chip">☑ Interview prep</span>
+        <span class="c2-chip">☑ Just to talk</span>
+      </div>
+      <div class="c2-btns">
+        <a href="#" class="btn btn--primary">Book a Coffee Chat →</a>
+        <a href="#" class="btn btn--ghost">Learn more</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       CONCEPT 3  ·  Compact inline card (sits right after the team grid)
+  ────────────────────────────────────────────────────────── -->
+  <div class="concept">
+    <div class="concept-label">
+      <span class="dot"></span>
+      Option 3 &nbsp;·&nbsp; Compact card — sits directly below the team grid
+    </div>
+    <div class="c3-card">
+      <div class="c3-icon-wrap">☕</div>
+      <div class="c3-text">
+        <h3>Want to meet one of us?</h3>
+        <p>
+          Book a 30-minute coffee chat with a board member. Pick a topic,
+          fill out a quick form, and we'll be in touch within 48 hours.
+          Open to every VT student.
+        </p>
+      </div>
+      <div class="c3-right">
+        <a href="#" class="btn btn--primary">Request a Chat →</a>
+        <small>Free · 30 min · Any topic</small>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       CONCEPT 4  ·  Sticky floating pill (simulated in-context)
+  ────────────────────────────────────────────────────────── -->
+  <div class="concept">
+    <div class="concept-label">
+      <span class="dot"></span>
+      Option 4 &nbsp;·&nbsp; Sticky floating pill — follows you as you scroll
+    </div>
+    <div class="c4-demo">
+      <div class="c4-demo-bg"></div>
+      <div class="c4-page-content">
+        <h3>← Rest of the page content here</h3>
+        <p>
+          The floating pill lives in the bottom-right corner and stays visible
+          no matter where you are on the page — team section, mission, events.
+          It pulses gently to draw attention without being intrusive.
+        </p>
+      </div>
+      <div class="c4-pill-container">
+        <span class="c4-label">always visible ↓</span>
+        <div class="c4-pill">☕ Coffee Chat</div>
+      </div>
+      <div class="c4-pill-ring"></div>
+    </div>
+    <div class="c4-note">
+      💡 Option 4 works best <em>paired</em> with one of the other options — the pill gives persistent access while the section gives context and warmth. Used alone it can feel like a chat widget.
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/club_logo.png" alt="" class="brand__logo" />
+        <span class="brand__name">CS Careers</span>
+      </a>
+      <p class="footer-contact">
+        Business inquiries: <a href="mailto:cscareersvt@gmail.com">cscareersvt@gmail.com</a>
+      </p>
+      <p class="footer-meta">© 2026 CS Careers at Virginia Tech</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
