@@ -1,8 +1,7 @@
 import "../styles/coffee-chat-concepts.css";
 
 // TODO(intern): pick one of these concepts (or combine them) and build the real
-// Coffee Chats request flow. This page is ported directly from
-// redesign/coffee-chat-concepts.html — a 4-option design deck, nothing is wired up yet.
+// Coffee Chats request flow. This is a 4-option design deck — nothing is wired up yet.
 // Delete this whole file's contents and replace with the real feature once built.
 
 function CoffeeChats() {

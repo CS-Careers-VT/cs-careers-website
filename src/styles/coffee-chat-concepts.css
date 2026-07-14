@@ -1,7 +1,7 @@
 /* Scoped styles for the Coffee Chats concept deck (src/pages/CoffeeChats.tsx).
-   Ported from redesign/coffee-chat-concepts.html — selectors are prefixed with
-   .coffee-concepts so they can't leak onto the rest of the site (that file
-   redefines .btn, .eyebrow, --maroon, etc. with different values). */
+   Selectors are prefixed with .coffee-concepts so they can't leak onto the
+   rest of the site (this deck redefines .btn, .eyebrow, --maroon, etc. with
+   different values than the main site's redesign.css). */
 
 .coffee-concepts {
   --cc-bg:       #0A0614;
