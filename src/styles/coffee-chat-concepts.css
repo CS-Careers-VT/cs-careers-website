@@ -1,0 +1,460 @@
+/* Scoped styles for the Coffee Chats concept deck (src/pages/CoffeeChats.tsx).
+   Ported from redesign/coffee-chat-concepts.html — selectors are prefixed with
+   .coffee-concepts so they can't leak onto the rest of the site (that file
+   redefines .btn, .eyebrow, --maroon, etc. with different values). */
+
+.coffee-concepts {
+  --cc-bg:       #0A0614;
+  --cc-surface:  rgba(22, 10, 36, 0.6);
+  --cc-border:   rgba(255,255,255,0.07);
+  --cc-maroon:   #7B1535;
+  --cc-magenta:  #C41E5A;
+  --cc-purple:   #6B3FA0;
+  --cc-cyan:     #3DCCB6;
+  --cc-text:     #F0EBF8;
+  --cc-text-soft:#C4B8D8;
+  --cc-text-mute:#8A7EA0;
+  --cc-radius:   16px;
+  --cc-radius-lg:24px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--cc-text);
+  font-family: 'Inter', sans-serif;
+}
+
+.coffee-concepts .concepts-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.coffee-concepts .concepts-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.coffee-concepts .concepts-header p {
+  font-size: 14px;
+  color: var(--cc-text-mute);
+}
+
+.coffee-concepts .concept {
+  max-width: 1000px;
+  margin: 0 auto 100px;
+}
+.coffee-concepts .concept-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cc-text-mute);
+  margin-bottom: 20px;
+}
+.coffee-concepts .concept-label .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--cc-cyan);
+}
+.coffee-concepts .concept-label .tag {
+  background: rgba(61,204,182,0.12);
+  border: 1px solid rgba(61,204,182,0.25);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 10px;
+  color: var(--cc-cyan);
+}
+
+.coffee-concepts .cc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.coffee-concepts .cc-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.coffee-concepts .cc-btn--primary {
+  background: linear-gradient(120deg, var(--cc-maroon), var(--cc-magenta));
+  color: #fff;
+}
+.coffee-concepts .cc-btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--cc-text-soft);
+}
+
+.coffee-concepts .cc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cc-text-mute);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--cc-border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+}
+.coffee-concepts .cc-eyebrow__dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--cc-cyan);
+  flex-shrink: 0;
+}
+
+.coffee-concepts .divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin: 0 auto 100px;
+  max-width: 1000px;
+}
+
+.coffee-concepts .photo-placeholder {
+  border-radius: var(--cc-radius);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(61,204,182,0.2), transparent 60%),
+    radial-gradient(circle at 75% 70%, rgba(168,48,90,0.25), transparent 55%),
+    #160A24;
+  border: 1px solid var(--cc-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cc-text-mute);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* CONCEPT 1 — text left · image right · button under image */
+.coffee-concepts .c1-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--cc-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-surface);
+  backdrop-filter: blur(16px);
+}
+.coffee-concepts .c1-text {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.coffee-concepts .c1-text h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.coffee-concepts .c1-text h2 span {
+  background: linear-gradient(120deg, var(--cc-cyan), var(--cc-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.coffee-concepts .c1-text p {
+  font-size: 15px;
+  color: var(--cc-text-soft);
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 380px;
+}
+.coffee-concepts .c1-text ul {
+  list-style: none;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.coffee-concepts .c1-text ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--cc-text-soft);
+}
+.coffee-concepts .c1-text ul li::before {
+  content: '✓';
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(61,204,182,0.12);
+  border: 1px solid rgba(61,204,182,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--cc-cyan);
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 20px;
+}
+.coffee-concepts .c1-visual {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.coffee-concepts .c1-visual .photo-placeholder {
+  flex: 1;
+  border-radius: 0;
+  border: none;
+  border-left: 1px solid var(--cc-border);
+  min-height: 320px;
+}
+.coffee-concepts .c1-visual .photo-placeholder span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+.coffee-concepts .c1-visual .photo-placeholder p {
+  font-size: 12px;
+}
+.coffee-concepts .c1-btn-area {
+  padding: 20px 28px;
+  background: rgba(10,6,20,0.4);
+  border-top: 1px solid var(--cc-border);
+  border-left: 1px solid var(--cc-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.coffee-concepts .c1-btn-area small {
+  font-size: 12px;
+  color: var(--cc-text-mute);
+  line-height: 1.5;
+}
+
+/* CONCEPT 2 — full-width warm centered section */
+.coffee-concepts .c2-section {
+  border-radius: var(--cc-radius-lg);
+  padding: 72px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+}
+.coffee-concepts .c2-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(123,21,53,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 50%, rgba(107,63,160,0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.coffee-concepts .c2-icon {
+  font-size: 52px;
+  margin-bottom: 20px;
+  display: block;
+}
+.coffee-concepts .c2-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+  position: relative;
+}
+.coffee-concepts .c2-section h2 span {
+  background: linear-gradient(120deg, var(--cc-cyan) 0%, var(--cc-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.coffee-concepts .c2-section > p {
+  font-size: 16px;
+  color: var(--cc-text-soft);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.65;
+  position: relative;
+}
+.coffee-concepts .c2-chips {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  position: relative;
+}
+.coffee-concepts .c2-chip {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--cc-border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: var(--cc-text-soft);
+}
+.coffee-concepts .c2-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+}
+
+/* CONCEPT 3 — compact inline card */
+.coffee-concepts .c3-card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 40px;
+  border-radius: var(--cc-radius-lg);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  backdrop-filter: blur(16px);
+}
+.coffee-concepts .c3-icon-wrap {
+  width: 72px; height: 72px;
+  border-radius: var(--cc-radius);
+  background: linear-gradient(135deg, rgba(123,21,53,0.4), rgba(107,63,160,0.3));
+  border: 1px solid rgba(196,30,90,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+.coffee-concepts .c3-text { flex: 1; }
+.coffee-concepts .c3-text h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.coffee-concepts .c3-text p {
+  font-size: 14px;
+  color: var(--cc-text-soft);
+  line-height: 1.55;
+}
+.coffee-concepts .c3-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.coffee-concepts .c3-right small {
+  font-size: 11.5px;
+  color: var(--cc-text-mute);
+}
+
+/* CONCEPT 4 — sticky floating pill (simulated) */
+.coffee-concepts .c4-demo {
+  border-radius: var(--cc-radius-lg);
+  padding: 48px;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  position: relative;
+  min-height: 280px;
+}
+.coffee-concepts .c4-demo-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--cc-radius-lg);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.025) 39px,
+      rgba(255,255,255,0.025) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.025) 39px,
+      rgba(255,255,255,0.025) 40px
+    );
+  pointer-events: none;
+}
+.coffee-concepts .c4-page-content {
+  position: relative;
+  z-index: 1;
+}
+.coffee-concepts .c4-page-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0.35;
+}
+.coffee-concepts .c4-page-content p {
+  font-size: 14px;
+  color: var(--cc-text-mute);
+  line-height: 1.6;
+  max-width: 500px;
+  opacity: 0.35;
+}
+.coffee-concepts .c4-pill-container {
+  position: absolute;
+  bottom: 28px;
+  right: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.coffee-concepts .c4-label {
+  font-size: 11px;
+  color: var(--cc-cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.coffee-concepts .c4-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--cc-maroon), var(--cc-magenta));
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 32px rgba(196,30,90,0.4);
+  cursor: pointer;
+}
+.coffee-concepts .c4-pill-ring {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid rgba(196,30,90,0.3);
+  animation: cc-pulse 2.5s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes cc-pulse {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0;   }
+}
+.coffee-concepts .c4-note {
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: rgba(61,204,182,0.06);
+  border: 1px solid rgba(61,204,182,0.15);
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--cc-text-mute);
+  line-height: 1.5;
+}

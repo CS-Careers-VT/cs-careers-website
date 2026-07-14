@@ -1,62 +1,88 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import mainLogo from "@assets/icons/main_logo.svg";
+import { NavLink, useNavigate } from "react-router-dom";
+import clubLogo from "@assets/icons/club_logo.png";
+import { handleButtonNav } from "../../../button_nav";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/about-us", label: "About Us" },
+  { to: "/events", label: "Events" },
+  { to: "/photo-gallery", label: "Photo Gallery" },
+  { to: "/coffee-chats", label: "Coffee Chats" },
+];
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="w-full bg-csc-maroon-bg py-6 fixed top-0 left-0 z-50">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between px-8">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link to="/">
-            <img
-              src={mainLogo}
-              alt="CS Careers @ VT Logo"
-              className="h-16 w-auto object-contain cursor-pointer"
-            />
-          </Link>
+    <header className="site-header">
+      <div className="header-inner">
+        <NavLink className="brand" to="/">
+          <img src={clubLogo} alt="" className="brand__logo" />
+          <span className="brand__name">CS Careers</span>
+        </NavLink>
+
+        <nav className="nav" aria-label="Primary">
+          <ul className="nav__list">
+            {links.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) => (isActive ? "is-active" : "")}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="header-actions">
+          <a href="#" className="btn btn--ghost btn--sm">Log in</a>
+          <button
+            className="btn btn--primary btn--sm"
+            onClick={() => handleButtonNav({ type: "internal", path: "/#follow" }, navigate)}
+          >
+            Get Involved
+          </button>
         </div>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 text-neutral-50 text-2xl font-semibold tracking-wider">
-          <li>
-            <Link to="/" className="hover:text-gray-300 transition">Home</Link>
-          </li>
-          <li>
-            <Link to="/about-us" className="hover:text-gray-300 transition">About Us</Link>
-          </li>
-          <li>
-            <Link to="/events" className="hover:text-gray-300 transition">Events</Link>
-          </li>
-          <li>
-            <Link to="/photo-gallery" className="hover:text-gray-300 transition">Photo Gallery</Link>
-          </li>
-        </ul>
-
-        {/* Hamburger Icon */}
         <button
-          className="md:hidden text-white text-3xl focus:outline-none"
-          onClick={toggleMenu}
+          className="nav-toggle"
+          aria-expanded={isOpen}
+          aria-label="Toggle navigation"
+          onClick={() => setIsOpen((v) => !v)}
         >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
+          <span></span><span></span><span></span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <ul className="flex flex-col items-center space-y-4 mt-4 md:hidden text-neutral-50 text-xl font-semibold tracking-wider bg-csc-maroon-bg">
-          <li><Link to="/" onClick={closeMenu} className="hover:text-gray-300 transition">Home</Link></li>
-          <li><Link to="/about-us" onClick={closeMenu} className="hover:text-gray-300 transition">About Us</Link></li>
-          <li><Link to="/events" onClick={closeMenu} className="hover:text-gray-300 transition">Events</Link></li>
-          <li><Link to="/photo-gallery" onClick={closeMenu} className="hover:text-gray-300 transition">Photo Gallery</Link></li>
-        </ul>
+      {isOpen && (
+        <nav className="mobile-menu" aria-label="Primary mobile">
+          <ul className="mobile-menu__list">
+            {links.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  onClick={closeMenu}
+                  className={({ isActive }) => (isActive ? "is-active" : "")}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <button
+            className="btn btn--primary mobile-menu__cta"
+            onClick={() => { closeMenu(); handleButtonNav({ type: "internal", path: "/#follow" }, navigate); }}
+          >
+            Get Involved
+          </button>
+        </nav>
       )}
-    </nav>
+    </header>
   );
 }
 
